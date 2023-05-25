@@ -1,5 +1,5 @@
-const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
+const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const UserSchema = new Schema({
     username: {
@@ -16,7 +16,9 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
+        required: true,
         unique: true,
+        match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
     cardio: [{
         type: Schema.Types.ObjectId,
@@ -28,17 +30,18 @@ const UserSchema = new Schema({
     }]
 });
 
-UserSchema.pre("save", async function (next) {
-    try {
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(this.password, salt);
-        this.password = hashedPassword;
-        next();
-    } catch (error) {
-        next(error);
+UserSchema.pre('save', async function (next) {
+    if (this.isNew || this.isModified('password')) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
     }
+    
+    next();
 });
 
-const User = model("User", UserSchema);
+UserSchema.methods.isCorrectPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+
+const User = model('User', UserSchema);
 
 module.exports = User;
