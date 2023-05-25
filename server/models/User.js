@@ -19,11 +19,11 @@ const UserSchema = new Schema({
         unique: true,
     },
     cardio: [{
-        type: Schema.Types.ObjectID,
+        type: Schema.Types.ObjectId,
         ref: "Cardio"
     }],
     strength: [{
-        type: Schema.Types.ObjectID,
+        type: Schema.Types.ObjectId,
         ref: "Strength"
     }]
 });
