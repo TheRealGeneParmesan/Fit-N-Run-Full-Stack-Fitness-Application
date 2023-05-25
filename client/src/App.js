@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Profile from "./pages/profile";
-import Cardio from "./pages/cardio";
-import Strength from "./pages/strength";
+import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
+import Cardio from "./pages/Cardio";
+import Strength from "./pages/Strength";
+import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
+
 import {
   ApolloClient,
   InMemoryCache,
