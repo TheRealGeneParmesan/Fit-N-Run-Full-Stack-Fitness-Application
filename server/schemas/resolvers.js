@@ -32,6 +32,34 @@ const resolvers = {
             return { token, user };
         },
 
-        addCardio: async ( parent, { cardio})
-    }
-}
+        addCardio: async ( parent, { name, label, duration, date }, context) => {
+            if (context.user) {
+                return Cardio.create({ name, label, duration, date })
+            }
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+        },
+
+        addStrength: async ( parent, { name, weight, sets, reps, date }, context) => {
+            if (context.user) {
+                return Strength.create({ name, weight, sets, reps, date })
+            }
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+        },
+
+        removeCardio: async ( parent, { cardioId }, context) => {
+            if (context.user) {
+                return Cardio.findOneAndDelete({ _id: cardioId })
+            }
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+        },
+
+        removeStrength: async ( parent, { strengthId }, context) => {
+            if (context.user) {
+                return Strength.findOneAndDelete({ _id: strengthId })
+            }
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+        },
+    },
+};
+
+module.exports = resolvers;
