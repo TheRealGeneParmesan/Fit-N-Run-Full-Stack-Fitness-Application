@@ -58,6 +58,10 @@ type Mutation {
   removeCardio
   removeStrength
 }
+
+`;
+
+module.exports = typeDefs;
    
     
   
