@@ -5,24 +5,24 @@ const CardioSchema = new Schema(
         type: {
             type: String,
             default: "cardio",
-            required: true
+            required: true,
         },
         label: {
             type: String,
             required: true,
-            maxlength: 25
+            maxlength: 25,
         },
         distance: {
             type: Number,
-            required: false
+            required: false,
         },
         duration: {
             type: Number, 
-            required: true
+            required: true,
         },
         date: {
             type: Date,
-            required: true
+            required: true,
         },
         userId: {
             type: Schema.Types.ObjectId,
