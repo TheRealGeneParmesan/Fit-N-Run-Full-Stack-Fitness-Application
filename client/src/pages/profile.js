@@ -9,7 +9,6 @@ import { Redirect } from "react-router-dom";
 const Profile = () => {
     const { loading, data } = useQuery(QUERY_USER);
     const user = data?.user || {};
-    const token = Auth.loggedIn() ? Auth.getToken() : null
 
     if (loading) {
         return <div>Loading...</div>;
