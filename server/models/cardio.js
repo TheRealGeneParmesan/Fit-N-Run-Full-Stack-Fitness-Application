@@ -20,6 +20,10 @@ const CardioSchema = new Schema(
             type: Number, 
             required: true
         },
+        date: {
+            type: Date,
+            required: true
+        },
         userId: {
             type: Schema.Types.ObjectId,
             ref: 'User',
