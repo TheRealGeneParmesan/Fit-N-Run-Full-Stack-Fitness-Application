@@ -5,33 +5,33 @@ const StrengthSchema = new Schema(
     type: {
       type: String, 
       default: "strength",
-      required: true
+      required: true,
     },
     name: {
       type: String,
       required: true,
-      maxlength: 25
+      maxlength: 25,
     },
     weight: {
       type: Number,
-      required: false
+      required: false,
     },
     sets: {
       type: Number,
-      required: true
+      required: true,
     },
     reps: {
       type: Number,
-      required: true
+      required: true,
     },
     date: {
       type: Date,
-      required: true
+      required: true,
     },
     userId: {
       type: Schema.Types.ObjectId,
       ref: 'User',
-      required: true
+      required: true,
     },
   }
 );
