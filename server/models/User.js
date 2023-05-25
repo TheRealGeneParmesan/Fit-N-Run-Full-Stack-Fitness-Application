@@ -27,7 +27,7 @@ const UserSchema = new Schema({
     strength: [{
         type: Schema.Types.ObjectId,
         ref: "Strength"
-    }]
+    }],
 });
 
 UserSchema.pre('save', async function (next) {
