@@ -7,7 +7,7 @@ const CardioSchema = new Schema(
             default: "cardio",
             required: true,
         },
-        label: {
+        name: {
             type: String,
             required: true,
             maxlength: 25,
