@@ -25,7 +25,7 @@ const Profile = () => {
             <Container className="fitContainer" >
                 <h1 className="fitTitle">My FitHub</h1>
                 {/* Add user.username */}
-                <p className="fitText">Welcome to your FitHub! Let's get those gains! And then maybe celebrate with a donut? 🍩 A gluten free one of course! Made out of cauliflower!
+                <p className="fitText">Welcome to your FitHub! Let's put in that work and celebrate with a 🍩
                 </p>
             </Container>
         </div>
