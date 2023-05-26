@@ -36,7 +36,7 @@ const Login = () => {
 
     // clear form values
     setFormState({
-      username: "",
+      email: "",
       password: "",
     });
   };
@@ -48,18 +48,15 @@ const Login = () => {
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
             {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
-              </p>
+              <Link to="/"></Link>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="username"
-                  value={formState.username}
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
                   onChange={handleChange}
                 />
                 <input
