@@ -7,17 +7,17 @@ const NavFunction = () => {
     // const isLoggedIn = Auth.loggedIn();
 
     return (
-        <Navbar collapseOnSelect expand="sm" variant="dark" bg="dark">
+        <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
 
             {/* {isLoggedIn ? ( */}
             <>
-                <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center">
+                <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center text-info">
                     {/* Will have to add src = {logo} */}
                     {/* <img alt="logo" style={{ display: "inline" }} className="logo" /> */}
                     Fit N Run
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
+                <Navbar.Collapse className="nav-collapse">
 
                     <Nav className="navLinks">
                         <Nav.Link as={Link} to="/">
