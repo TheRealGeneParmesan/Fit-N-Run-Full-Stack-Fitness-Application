@@ -19,7 +19,7 @@ code {
   font-size: 3rem;
   font-weight: normal;
   text-decoration: none;
-  padding-left: 2rem;
+  padding-left: 1rem;
   color: turquoise;
   font-family: 'Faster One', cursive;
   letter-spacing: .5rem;
@@ -32,7 +32,6 @@ code {
 .navLinks {
   font-size: 1.6rem;
   text-decoration: none;
-  padding-left: 2rem;
   display: flex;
   justify-content: end;
 }
@@ -44,17 +43,25 @@ code {
 }
 
 .navCollapse {
-  justify-content: end;
+  display: flex;
+  align-items: center;
   font-weight: bold;
-
 }
 
+/* For bigger screens may need to do a media query for toggler */
 .navbar-toggler {
   color: turquoise;
   justify-content: end;
-  margin-right: 1rem;
+  margin-left: .5rem;
   font-size: 1.3rem;
 }
+
+@media (max-width: 576px) {
+  .navBrand {
+    font-size: 40px;
+  }
+}
+
 
 .myFithub {
   background-size: cover;
@@ -144,7 +151,6 @@ code {
   justify-content: center;
   color: Black;
   font-size: 2.5rem;
-  text-shadow: black 1px 0 10px;
   font-family: 'Faster One', cursive;
 }
 
