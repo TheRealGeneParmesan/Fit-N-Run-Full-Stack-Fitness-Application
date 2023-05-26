@@ -3,6 +3,8 @@ import React from "react";
 // import { QUERY_USER } from "../utils/queries";
 // import Auth from "../utils/auth";
 import { Container } from "react-bootstrap";
+
+import backProfile from "../images/backProfile.png";
 // import { Redirect } from "react-router-dom";
 
 
@@ -19,7 +21,7 @@ const Profile = () => {
     // }
 
     return (
-        <div className="my fithub">
+        <div className="myFithub" style={{ backgroundImage: `url(${backProfile})` }}>
             <Container className="fitContainer" >
                 <h1 className="fitTitle">My FitHub</h1>
                 {/* Add user.username */}
