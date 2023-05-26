@@ -12,7 +12,7 @@ const NavFunction = () => {
 
             {isLoggedIn ? (
                 <>
-                    <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center text-info">
+                    <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center justify-content-start">
                         {/* Will have to add src = {logo} */}
                         {/* <img alt="logo" style={{ display: "inline" }} className="logo" /> */}
                         Fit N Run
@@ -27,8 +27,7 @@ const NavFunction = () => {
                             <Nav.Link as={Link} to="/history">
                                 History
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/workout">
-                                Workout
+                            <Nav.Link onClick={Auth.logout} >Sign Out
                             </Nav.Link>
                         </Nav>
                         <Nav>
