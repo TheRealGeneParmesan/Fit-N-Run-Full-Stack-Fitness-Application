@@ -5,6 +5,8 @@ import Cardio from "./pages/Cardio";
 import Strength from "./pages/Strength";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
+import Login from "./pages/LoginForm";
+import Signup from "./pages/SignupForm";
 
 import {
   ApolloClient,
@@ -43,6 +45,8 @@ function App() {
             <Route path="/" element={<Profile />} />
             <Route path="/cardio" element={<Cardio />} />
             <Route path="/strength" element={<Strength />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
