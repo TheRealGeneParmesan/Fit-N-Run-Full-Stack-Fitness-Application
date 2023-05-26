@@ -10,6 +10,7 @@ type User {
 }
 
 type Cardio {
+  _id: ID
   name: String
   distance: Number
   duration: Number
@@ -18,6 +19,7 @@ type Cardio {
 }
 
 type Strength {
+  _id: ID
   name: String
   weight: Number
   sets: Number
@@ -32,6 +34,7 @@ type Auth {
 }
 
 input CardioInput {
+  _id: ID
   name: String
   distance: Number
   duration: Number
@@ -39,6 +42,7 @@ input CardioInput {
 }
 
 input StrengthInput {
+  _id: ID
   name: String
   weight: Number
   sets: Number
@@ -55,8 +59,8 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   saveCardio(input: CardioInput): User
   saveStrength(input: StrengthInput): User
-  removeCardio
-  removeStrength
+  removeCardio(cardioId: ID!): User
+  removeStrength(strengthId: ID!): User
 }
 
 `;
