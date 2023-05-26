@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://FitnRunAdmin:fitnrunadmin420@fitnruncluster.hsocs29.mongodb.net/?retryWrites=true&w=majority');
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://FitnRunAdmin:fitnrunadmin420@fitnruncluster.hsocs29.mongodb.net/?retryWrites=true&w=majority');
+
+// Notes from Geneparmigiano: Need to make sure IP's can connect from anywhere for that access (MongoAtlas)
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/FitnRun');
 
 module.exports = mongoose.connection;
 
