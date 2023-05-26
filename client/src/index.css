@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,19 +16,83 @@ code {
 }
 
 .navBrand {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: normal;
   text-decoration: none;
-  padding: 0.5rem;
+  padding-left: 2rem;
+  color: turquoise;
+  font-family: 'Faster One', cursive;
+  letter-spacing: .5rem;
+}
+
+.navbar-brand:focus, .navbar-brand:hover {
+  color: turquoise;
 }
 
 .navLinks {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-decoration: none;
-  padding-left: .5rem;
+  padding-left: 2rem;
+}
+
+.nav-link {
+  color: turquoise;
+  font-weight: normal;
+  font-family: 'Cherry Bomb One', cursive;
 }
 
 .navCollapse {
-  display: flex;
-  justify-content: flex-end;
+  justify-content: end;
+  font-weight: bold;
+
 }
+
+.navbar-toggler {
+  color: turquoise;
+  justify-content: end;
+  margin-right: .3rem;
+}
+
+.myFithub {
+  background-size: cover;
+  background-position: center;
+}
+
+.fitContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fitTitle {
+  font-size: 5rem;
+  color: white;
+  justify-content: center;
+  font-weight: normal;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9); 
+  font-family: 'Faster One', cursive;
+}
+
+.fitText {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: turquoise;
+  margin-bottom: 10rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .9); 
+}
+
+@media (max-width: 768px) {
+  .fitTitle {
+    font-size: 2rem; 
+    margin-bottom: 0.25rem; 
+  }
+  
+  .fitText {
+    font-size: 1rem; 
+    margin-bottom: 0.25rem; 
+  }
+}
+
