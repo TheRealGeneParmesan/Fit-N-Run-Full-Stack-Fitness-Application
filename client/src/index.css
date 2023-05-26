@@ -129,14 +129,14 @@ code {
 .card {
   width: calc(50% - 10px);
   margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 5px;
   border-radius: 5px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card a {
+.card a,.card-link {
   text-decoration: none;
   text-decoration: none;
   display: flex;
@@ -149,14 +149,14 @@ code {
 }
 
 @media screen and (max-width: 768px) {
-  .card a {
+  .card a, .card-link {
     font-size: 20px;
     line-height: 1.1;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .card a {
+  .card a, .card-link {
     font-size: 20px;
     line-height: 1;
   }

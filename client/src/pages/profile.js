@@ -35,7 +35,7 @@ const Profile = () => {
                 </p>
                 <div className="cardContainer">
                     <div className="card">
-                        <a href="/strength">Strength &nbsp;&nbsp; <GiWeightLiftingUp /></a>
+                        <Link className="card-link" to="/strength">Strength &nbsp;&nbsp; <GiWeightLiftingUp /></Link>
                     </div>
                     <div className="card">
                         <a href="/cardio">Cardio &nbsp;&nbsp; <GiRunningNinja /></a>
