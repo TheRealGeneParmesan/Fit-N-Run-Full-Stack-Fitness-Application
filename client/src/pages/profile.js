@@ -11,7 +11,7 @@ import { ImStopwatch } from "react-icons/im";
 
 import backProfile from "../images/backProfile.png";
 
-// import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Profile = () => {
@@ -35,10 +35,10 @@ const Profile = () => {
                 </p>
                 <div className="cardContainer">
                     <div className="card">
-                        <a href="/page1">Strength &nbsp;&nbsp; <GiWeightLiftingUp /></a>
+                        <a href="/strength">Strength &nbsp;&nbsp; <GiWeightLiftingUp /></a>
                     </div>
                     <div className="card">
-                        <a href="/page2">Cardio &nbsp;&nbsp; <GiRunningNinja /></a>
+                        <a href="/cardio">Cardio &nbsp;&nbsp; <GiRunningNinja /></a>
                     </div>
                     <div className="card">
                         <a href="/page3">Nutrition &nbsp;&nbsp; <IoIosNutrition /></a>
