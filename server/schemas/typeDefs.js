@@ -12,20 +12,20 @@ type User {
 type Cardio {
   _id: ID
   name: String
-  distance: Number
-  duration: Number
-  date: Date
-  userId: 
+  distance: Int
+  duration: Int
+  date: String
+  userId: ID
 }
 
 type Strength {
   _id: ID
   name: String
-  weight: Number
-  sets: Number
-  reps: Number
-  date: Date
-  userId:
+  weight: Int
+  sets: Int
+  reps: Int
+  date: String
+  userId: ID
 }
 
 type Auth {
@@ -36,18 +36,18 @@ type Auth {
 input CardioInput {
   _id: ID
   name: String
-  distance: Number
-  duration: Number
-  date: Date
+  distance: Int
+  duration: Int
+  date: String
 }
 
 input StrengthInput {
   _id: ID
   name: String
-  weight: Number
-  sets: Number
-  reps: Number
-  date: Date
+  weight: Int
+  sets: Int
+  reps: Int
+  date: String
 }
 
 type Query {
@@ -66,9 +66,9 @@ type Mutation {
 `;
 
 module.exports = typeDefs;
-   
-    
-  
-  
-   
-   
+
+
+
+
+
+
