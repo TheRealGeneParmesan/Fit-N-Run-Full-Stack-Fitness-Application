@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import Signup from "./SignupForm";
+import Login from "./LoginForm";
+
 import Auth from "../utils/auth";
 
 const NavFunction = () => {
-    // const isLoggedIn = Auth.loggedIn();
+    const isLoggedIn = Auth.loggedIn();
 
     return (
         <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark">
 
-            {/* {isLoggedIn ? ( */}
+            {isLoggedIn ? (
             <>
                 <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center text-info">
                     {/* Will have to add src = {logo} */}
@@ -34,13 +37,29 @@ const NavFunction = () => {
                     </Nav>
                 </Navbar.Collapse>
             </>
-            {/* ) : */}
-
-            {/* (<Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center"> */}
+            ) : (
+            <>
+            <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center">
             {/* Will have to add src = {logo} */}
             {/* <img alt="logo" style={{ display: "inline" }} className="logo" /> */}
-            {/* Fit N Run */}
-            {/* </Navbar.Brand>)} */}
+            Fit N Run
+            </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse className="nav-collapse">
+            
+                    <Nav className="navLinks">
+                        <Nav.Link as={Link} to="/login">
+                            Login
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/signup">
+                            Sign Up
+                        </Nav.Link>
+                    </Nav>
+                    <Nav>
+                    </Nav>
+                </Navbar.Collapse>
+            </>
+            )}
         </Navbar>
     );
 };
