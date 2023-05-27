@@ -154,6 +154,58 @@ code {
   font-family: 'Faster One', cursive;
 }
 
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginContainer {
+  margin: auto;
+  width: 50%;
+}
+
+.loginBtn {
+  background-color: turquoise;
+}
+
+.loginPage {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signupContainer {
+  margin: auto;
+  width: 50%;
+}
+
+.signupBtn {
+  background-color: turquoise;
+}
+
+.signupPage {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+.form-input{
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .card a, .card-link {
     font-size: 20px;
