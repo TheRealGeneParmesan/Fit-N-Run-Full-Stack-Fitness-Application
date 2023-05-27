@@ -1,9 +1,9 @@
 // TODO: style the returned form to our liking
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import backSignup from '../images/backSignup.png';
 
 import Auth from '../utils/auth';
 
@@ -40,15 +40,15 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="signupPage" style={{ backgroundImage: `url(${backSignup})` }}>
       <div className="col-12 col-lg-10">
-        <div className="">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+        <div className="signupContainer card">
+          <h4 className="card-header bg-dark text-light">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <Link to="/"></Link>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form className="signupForm" onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your username"
@@ -74,7 +74,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="signupBtn btn btn-block"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

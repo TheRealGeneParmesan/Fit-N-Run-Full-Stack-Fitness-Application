@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
+import backLogin from "../images/backLogin.png";
 
 import Auth from "../utils/auth";
 
@@ -42,15 +43,15 @@ const Login = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
+    <main className="loginPage" style={{ backgroundImage: `url(${backLogin})` }}>
       <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+        <div className="loginContainer card">
+          <h4 className="card-header bg-dark text-light">Login</h4>
           <div className="card-body">
             {data ? (
               <Link to="/"></Link>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form className="loginForm" onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -68,7 +69,7 @@ const Login = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="loginBtn btn btn-block"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
