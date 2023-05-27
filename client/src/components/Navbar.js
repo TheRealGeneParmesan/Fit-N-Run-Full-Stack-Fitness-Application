@@ -27,7 +27,7 @@ const NavFunction = () => {
                             <Nav.Link as={Link} to="/history">
                                 History
                             </Nav.Link>
-                            <Nav.Link onClick={Auth.logout} >Sign Out
+                            <Nav.Link onClick={Auth.logout}>Sign Out
                             </Nav.Link>
                         </Nav>
                         <Nav>

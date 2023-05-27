@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-import Cardio from "./pages/Cardio";
+// import Nutrition from "./pages/Nutrition";
 import Strength from "./pages/Strength";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
 import Login from "./pages/LoginForm";
 import Signup from "./pages/SignupForm";
+import Cardio from "./pages/Cardio";
 
 import {
   ApolloClient,
@@ -47,6 +47,7 @@ function App() {
             <Route path="/strength" element={<Strength />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            {/* <Route path="/nutrition" element={<Nutrition />} /> */}
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}

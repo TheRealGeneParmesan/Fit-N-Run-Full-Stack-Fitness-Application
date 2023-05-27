@@ -38,10 +38,10 @@ const Profile = () => {
                         <Link className="card-link" to="/strength">Strength &nbsp;&nbsp; <GiWeightLiftingUp /></Link>
                     </div>
                     <div className="card">
-                        <a href="/cardio">Cardio &nbsp;&nbsp; <GiRunningNinja /></a>
+                        <Link classname="cardio-link" to="/cardio"> Cardio &nbsp;&nbsp; <GiRunningNinja /></Link>
                     </div>
                     <div className="card">
-                        <a href="/page3">Nutrition &nbsp;&nbsp; <IoIosNutrition /></a>
+                        <Link classname="nutrition-link" to="/nutrition"> Nutrition &nbsp;&nbsp; <IoIosNutrition /></Link>
                     </div>
                     <div className="card">
                         <a href="/page4">Stopwatch &nbsp;&nbsp; < ImStopwatch /></a>
