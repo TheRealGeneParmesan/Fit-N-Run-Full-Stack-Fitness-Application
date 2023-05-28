@@ -49,23 +49,23 @@ const Strength = () => {
                     <form onSubmit={handleStrengthSubmit}>
                         <div className="form-group label">
                             <label>Activity:</label>
-                            <input type="text" className="form-control" value={activity} onChange={handleActivityChange} />
+                            <input type="text" className="form-control" placeholder="Bicep Curls" value={activity} onChange={handleActivityChange} />
                         </div>
                         <div className="form-group label">
                             <label>Reps:</label>
-                            <input type="text" className="form-control" value={reps} onChange={handleRepsChange} />
+                            <input type="text" className="form-control" placeholder="15" value={reps} onChange={handleRepsChange} />
                         </div>
                         <div className="form-group label">
                             <label>Sets:</label>
-                            <input type="text" className="form-control" value={sets} onChange={handleSetsChange} />
+                            <input type="text" className="form-control" placeholder="3" value={sets} onChange={handleSetsChange} />
                         </div>
                         <div className="form-group label">
-                            <label>Weight:</label>
-                            <input type="text" className="form-control" value={weight} onChange={handleWeightChange} />
+                            <label>Weight (Optional):</label>
+                            <input type="text" className="form-control" placeholder="45" value={weight} onChange={handleWeightChange} />
                         </div>
                         <div className="form-group label">
-                            <label>Date</label>
-                            <input type="text" className="form-control" value={date} onChange={handleDateChange} />
+                            <label>Date:</label>
+                            <input type="text" className="form-control" placeholder="05/27/2023" value={date} onChange={handleDateChange} />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>

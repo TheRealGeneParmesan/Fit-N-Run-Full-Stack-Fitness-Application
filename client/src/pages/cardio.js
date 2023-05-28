@@ -41,19 +41,19 @@ const Cardio = () => {
                     <form onSubmit={handleCardioSubmit}>
                         <div className="form-group">
                             <label>Activity:</label>
-                            <input type="text" className="form-control" value={cardio} onChange={handleCardioChange} />
+                            <input type="text" className="form-control" placeholder="Marathon Running" value={cardio} onChange={handleCardioChange} />
                         </div>
                         <div className="form-group">
                             <label>Duration:</label>
-                            <input type="text" className="form-control" value={cardioDuration} onChange={handleCardioDurationChange} />
+                            <input type="text" className="form-control" placeholder="2 Hours" value={cardioDuration} onChange={handleCardioDurationChange} />
                         </div>
                         <div className="form-group">
-                            <label>Distance:</label>
-                            <input type="text" className="form-control" value={cardioDistance} onChange={handleCardioDistanceChange} />
+                            <label>Distance (Miles):</label>
+                            <input type="text" className="form-control" placeholder="3" value={cardioDistance} onChange={handleCardioDistanceChange} />
                         </div>
                         <div className="form-group label">
-                            <label>Date</label>
-                            <input type="text" className="form-control" value={date} onChange={handleDateChange} />
+                            <label>Date:</label>
+                            <input type="text" className="form-control" placeholder="05/27/2023" value={date} onChange={handleDateChange} />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
