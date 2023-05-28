@@ -1,9 +1,6 @@
 import React from "react";
-// import { useQuery } from "@apollo/react-hooks";
-// import { QUERY_USER } from "../utils/queries";
-// import Auth from "../utils/auth";
+import Auth from "../utils/auth";
 import { Container } from "react-bootstrap";
-
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { GiRunningNinja } from "react-icons/gi";
 import { IoIosNutrition } from "react-icons/io";
@@ -15,16 +12,9 @@ import { Link } from "react-router-dom";
 
 
 const Profile = () => {
-    // const { loading, data } = useQuery(QUERY_USER);
-    // const user = data?.user || {};
-
-    // if (loading) {
-    //     return <div>Loading...</div>;
-    // }
-
-    // if (!Auth.loggedIn()) {
-    //     return <Redirect to="/login" />;
-    // }
+    if (!Auth.loggedIn()) {
+        return <Link to="/login" />;
+    }
 
     return (
         <div className="myFithub" style={{ backgroundImage: `url(${backProfile})` }}>
