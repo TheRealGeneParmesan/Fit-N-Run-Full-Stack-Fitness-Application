@@ -164,6 +164,7 @@ code {
 .loginContainer {
   margin: auto;
   width: 50%;
+  margin-bottom: 15rem;
 }
 
 .loginBtn {
@@ -171,11 +172,13 @@ code {
 }
 
 .loginPage {
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   background-position: center;
-  padding-top: 15%;
-  padding-bottom: 15%;
 }
 
 .signupForm {
@@ -188,6 +191,7 @@ code {
 .signupContainer {
   margin: auto;
   width: 50%;
+  margin-bottom: 15rem;
 }
 
 .signupBtn {
@@ -195,11 +199,13 @@ code {
 }
 
 .signupPage {
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-size: cover;
   background-position: center;
-  padding-top: 15%;
-  padding-bottom: 15%;
 }
 
 .form-input{
