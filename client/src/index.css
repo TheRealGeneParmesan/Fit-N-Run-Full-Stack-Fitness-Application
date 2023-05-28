@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -39,7 +39,7 @@ code {
 .nav-link {
   color: turquoise;
   font-weight: normal;
-  font-family: 'Cherry Bomb One', cursive;
+  font-family: 'Oswald';
 }
 
 .navCollapse {
@@ -212,6 +212,17 @@ code {
   margin-bottom: 1rem;
 }
 
+.form-control:focus {
+  border-color: turquoise;
+  background:rgba(0, 0, 0, 0.9);
+  color: White;
+  font-family: 'Oswald';
+}
+
+.form-control {
+  color: white;
+}
+
 @media screen and (max-width: 768px) {
   .card a, .card-link {
     font-size: 20px;
@@ -237,6 +248,103 @@ code {
 }
 
 .strengthContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .strengthContainer {
+      padding: 0 15px; 
+    }
+  }
+
+  .strengthForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; 
+    margin: auto;
+    margin-bottom: 50px;
+    background-color:rgba(0, 0, 0, 0.4);
+    color: turquoise;
+    text-shadow: black 1px 0 10px;
+    font-family: 'Oswald';
+    height: 600px;
+  }
+
+  .form-control {
+    background-color:rgba(0, 0, 0, 0.4);
+    font-size: 1.4rem;
+  }
+
+  .form-group label {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary {
+    background-color: turquoise;
+    border-color: turquoise;
+    color: black;
+    margin-top: 10px;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  .cardioImg {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardioContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .cardioContainer {
+      padding: 0 15px; 
+    }
+  }
+
+  .cardioForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; 
+    margin: auto;
+    margin-bottom: 50px;
+    background-color:rgba(0, 0, 0, 0.4);
+    color: turquoise;
+    text-shadow: black 1px 0 10px;
+    font-family: 'Oswald';
+    height: 600px;
+  }
+
+  .signupPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loginPage {
     height: 100vh;
     display: flex;
     flex-direction: column;
