@@ -10,8 +10,16 @@ import backProfile from "../images/backProfile.png";
 
 import { Link } from "react-router-dom";
 
+// import { GET_ME } from '../utils/queries'
+// import { useQuery } from "@apollo/client";
+
+
+
 
 const Profile = () => {
+    // const { data, loading, error } = useQuery(GET_ME);
+    // const username = data?.me?.username;
+
     if (!Auth.loggedIn()) {
         return <Link to="/login" />;
     }
@@ -20,18 +28,18 @@ const Profile = () => {
         <div className="myFithub" style={{ backgroundImage: `url(${backProfile})` }}>
             <Container className="fitContainer" >
                 <h1 className="fitTitle">My FitHub</h1>
-                {/* Add user.username */}
-                <p className="fitText">Welcome to your FitHub! Let's put in that work and celebrate with a 🍩
+                {/* Add {username} */}
+                <p className="fitText"> Welcome to your FitHub! Let's put in that work and celebrate with a 🍩
                 </p>
                 <div className="cardContainer">
                     <div className="card">
                         <Link className="card-link" to="/strength">Strength &nbsp;&nbsp; <GiWeightLiftingUp /></Link>
                     </div>
                     <div className="card">
-                        <Link classname="cardio-link" to="/cardio"> Cardio &nbsp;&nbsp; <GiRunningNinja /></Link>
+                        <Link className="cardio-link" to="/cardio"> Cardio &nbsp;&nbsp; <GiRunningNinja /></Link>
                     </div>
                     <div className="card">
-                        <Link classname="nutrition-link" to="/nutrition"> Nutrition &nbsp;&nbsp; <IoIosNutrition /></Link>
+                        <Link className="nutrition-link" to="/nutrition"> Nutrition &nbsp;&nbsp; <IoIosNutrition /></Link>
                     </div>
                     <div className="card">
                         <a href="/page4">Stopwatch &nbsp;&nbsp; < ImStopwatch /></a>
