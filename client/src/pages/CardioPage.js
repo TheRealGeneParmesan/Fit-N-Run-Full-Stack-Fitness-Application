@@ -35,7 +35,7 @@ const Cardio = () => {
     return (
         <div className="cardioImg" style={{ backgroundImage: `url(${cardioImg})` }}>
             <Container
-                classname="cardioContainer">
+                className="cardioContainer">
                 <div className='cardioForm'>
                     <h1 className="cardioTitle"> Cardio </h1>
                     <form onSubmit={handleCardioSubmit}>

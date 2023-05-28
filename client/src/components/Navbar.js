@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
+import fitnessLogo from "../images/fitnesslogo.png";
 
 import Auth from "../utils/auth";
 
@@ -13,8 +14,11 @@ const NavFunction = () => {
             {isLoggedIn ? (
                 <>
                     <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center justify-content-start">
-                        {/* Will have to add src = {logo} */}
-                        {/* <img alt="logo" style={{ display: "inline" }} className="logo" /> */}
+                        <img
+                            src={fitnessLogo}
+                            alt="Fitness Logo"
+                            className="fitnessLogo"
+                        />
                         Fit N Run
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -27,6 +31,9 @@ const NavFunction = () => {
                             <Nav.Link as={Link} to="/history">
                                 History
                             </Nav.Link>
+                            <Nav.Link as={Link} to="/donate">
+                                Donate
+                            </Nav.Link>
                             <Nav.Link onClick={Auth.logout}>Sign Out
                             </Nav.Link>
                         </Nav>
@@ -37,8 +44,11 @@ const NavFunction = () => {
             ) : (
                 <>
                     <Navbar.Brand as={Link} to="/" className="navBrand d-flex align-items-center">
-                        {/* Will have to add src = {logo} */}
-                        {/* <img alt="logo" style={{ display: "inline" }} className="logo" /> */}
+                        <img
+                            src={fitnessLogo}
+                            alt="Fitness Logo"
+                            className="fitnessLogo"
+                        />
                         Fit N Run
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
