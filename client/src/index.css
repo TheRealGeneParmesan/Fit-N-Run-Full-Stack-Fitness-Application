@@ -19,10 +19,17 @@ code {
   font-size: 3rem;
   font-weight: normal;
   text-decoration: none;
-  padding-left: 1rem;
+  padding-left: .3rem;
   color: turquoise;
   font-family: 'Faster One', cursive;
   letter-spacing: .5rem;
+}
+
+.fitnessLogo {
+  height: 45px;
+  width: 45px;
+  margin-right: 1rem;
+  background-color:rgba(0, 0, 0, 0.9);
 }
 
 .navbar-brand:focus, .navbar-brand:hover {
@@ -34,6 +41,19 @@ code {
   text-decoration: none;
   display: flex;
   justify-content: end;
+  margin-left: auto;
+}
+
+@media (max-width: 576px) {
+  .navLinks {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .navLinks {
+    font-size: 1rem;
+  }
 }
 
 .nav-link {
@@ -41,6 +61,7 @@ code {
   font-weight: normal;
   font-family: 'Oswald';
 }
+
 
 .navCollapse {
   display: flex;
@@ -52,13 +73,25 @@ code {
 .navbar-toggler {
   color: turquoise;
   justify-content: end;
-  margin-left: .5rem;
   font-size: 1.3rem;
+  margin-right: .5rem;
 }
+
 
 @media (max-width: 576px) {
   .navBrand {
     font-size: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navBrand {
+    font-size: 30px;
+  }
+}
+@media (max-width: 352px) {
+  .navBrand {
+    font-size: 20px;
   }
 }
 
@@ -326,15 +359,21 @@ code {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 100px;
     max-width: 600px; 
-    margin: auto;
-    margin-bottom: 50px;
     background-color:rgba(0, 0, 0, 0.4);
     color: turquoise;
     text-shadow: black 1px 0 10px;
     font-family: 'Oswald';
     height: 600px;
   }
+
+@media (max-width: 600px) {
+  .cardioForm {
+    height: auto; 
+    padding: 20px; 
+  }
+}
 
   .signupPage {
     height: 100vh;
