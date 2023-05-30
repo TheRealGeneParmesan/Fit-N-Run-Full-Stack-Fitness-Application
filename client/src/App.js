@@ -9,6 +9,7 @@ import Signup from "./pages/SignupForm";
 import Cardio from "./pages/CardioPage";
 import Auth from "./utils/auth";
 import Stopwatch from "./pages/Stopwatch";
+import History from "./pages/History";
 
 import {
   ApolloClient,
@@ -60,6 +61,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/stopwatch" element={<Stopwatch />} />
+            <Route path="/history" element={<History />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}

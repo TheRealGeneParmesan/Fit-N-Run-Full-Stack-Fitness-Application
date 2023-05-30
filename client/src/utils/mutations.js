@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_CARDIO = gql`
-    mutation addCardio($name: String!, $distance: Number!, $duration: Number!, $date: Date!){
+    mutation addCardio($name: String!, $distance: Int!, $duration: Int!, $date: Date!){
         addCardio(name: $name, distance: $distance, duration: $duration, date: $date){
             _id
             username
@@ -42,7 +42,7 @@ export const ADD_CARDIO = gql`
 `;
 
 export const ADD_STRENGTH = gql`
-    mutation addStrength($name: String!, $weight: Number!, $sets: Number!, $reps: Number!, $date: Date!){
+    mutation addStrength($name: String!, $weight: Int!, $sets: Int!, $reps: Int!, $date: Date!){
         addStrength(name: $name, weight: $weight, sets: $sets, reps: $reps, date: $date){
             _id
             username

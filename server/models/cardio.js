@@ -15,10 +15,12 @@ const CardioSchema = new Schema(
         distance: {
             type: Number,
             required: false,
+            integer: true,
         },
         duration: {
-            type: Number, 
+            type: Number,
             required: true,
+            integer: true,
         },
         date: {
             type: Date,

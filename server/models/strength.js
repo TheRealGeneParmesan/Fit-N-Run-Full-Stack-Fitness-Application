@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const StrengthSchema = new Schema(
   {
     type: {
-      type: String, 
+      type: String,
       default: "strength",
       required: true,
     },
@@ -15,14 +15,17 @@ const StrengthSchema = new Schema(
     weight: {
       type: Number,
       required: false,
+      integer: true,
     },
     sets: {
       type: Number,
       required: true,
+      integer: true,
     },
     reps: {
       type: Number,
       required: true,
+      integer: true,
     },
     date: {
       type: Date,
