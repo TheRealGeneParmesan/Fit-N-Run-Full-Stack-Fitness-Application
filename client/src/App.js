@@ -8,6 +8,7 @@ import Login from "./pages/LoginForm";
 import Signup from "./pages/SignupForm";
 import Cardio from "./pages/CardioPage";
 import Auth from "./utils/auth";
+import Stopwatch from "./pages/Stopwatch";
 
 import {
   ApolloClient,
@@ -58,7 +59,7 @@ const App = () => {
             <Route path="/strength" element={<Strength />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            {/* <Route path="/nutrition" element={<Nutrition />} /> */}
+            <Route path="/stopwatch" element={<Stopwatch />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
