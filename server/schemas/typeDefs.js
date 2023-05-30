@@ -52,6 +52,7 @@ input StrengthInput {
 
 type Query {
   me: User
+  donationSession: String
 }
 
 type Mutation {
