@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Nutrition from "./pages/Nutrition";
-import Strength from "./pages/Strength";
-import Profile from "./pages/Profile";
+import Strength from "./pages/strength";
+import Profile from "./pages/profile";
 import Navbar from "./components/Navbar";
 import Login from "./pages/LoginForm";
 import Signup from "./pages/SignupForm";
 import Cardio from "./pages/CardioPage";
+import Donation from "./pages/Donation";
+import Success from "./pages/Success";
+import Cancel from "./pages/Cancel";
 import Auth from "./utils/auth";
 import Stopwatch from "./pages/Stopwatch";
 import History from "./pages/History";
@@ -66,6 +69,9 @@ const App = () => {
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
             />
+            <Route path="/donate" element={<Donation />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/cancel" element={<Cancel />} />
           </Routes>
         </>
       </Router>

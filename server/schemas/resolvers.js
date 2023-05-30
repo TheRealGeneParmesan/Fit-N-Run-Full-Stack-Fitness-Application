@@ -1,6 +1,7 @@
 const { Cardio, Strength, User } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth')
+const stripe = require('stripe')('sk_test_51NDIR4JJLHCDOShGXKl6t9qqixtopCzRRs9PvobEwWNtEfsHNKxCaPNF0L6R1rOUR7egj0KfXLENcCt8pkNQq5EN00a03JIq4r')
 
 const resolvers = {
     Query: {
@@ -10,6 +11,24 @@ const resolvers = {
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');
         },
+        donationSession: async (parent, args, context) => {
+            const url = new URL(context.headers.referer).origin;
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                line_items: [
+                    {
+                        price: 'price_1NDIWPJJLHCDOShGaz9nTpQU',
+                        quantity: 1
+                    }
+                ],
+                mode: 'payment',
+                success_url: `${url}/success`,
+                cancel_url: `${url}/cancel`
+            });
+            return JSON.stringify({
+                url: session.url
+            });
+        }
     },
 
     Mutation: {
