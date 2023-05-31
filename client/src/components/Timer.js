@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// Testing
 const Timer = () => {
     const [time, setTime] = useState({
         hours: 0,
@@ -80,6 +79,7 @@ const Timer = () => {
     return (
         <div className="timer-container">
             <div className="clock">
+                <h1 className="timer-title"> Timer </h1>
                 <div className="clock-face">
                     <span className="clock-time">{time.hours.toString().padStart(2, '0')}:{time.minutes.toString().padStart(2, '0')}</span>
                 </div>
@@ -112,11 +112,11 @@ const Timer = () => {
                         </button>
                     </div>
                 </div>
-            </div>
-            <div className="Timercontrols">
-                <button className="start-button" onClick={handleStart}>Start</button>
-                <button className="stop-button" onClick={handleStop}>Stop</button>
-                <button className="reset-button" onClick={handleReset}>Reset</button>
+                <div className="timer-buttons">
+                    <button className="start-button" onClick={handleStart}>Start</button>
+                    <button className="stop-button" onClick={handleStop}>Stop</button>
+                    <button className="reset-button" onClick={handleReset}>Reset</button>
+                </div>
             </div>
         </div>
     );
