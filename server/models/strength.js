@@ -15,17 +15,14 @@ const StrengthSchema = new Schema(
     weight: {
       type: Number,
       required: false,
-      integer: true,
     },
     sets: {
       type: Number,
       required: true,
-      integer: true,
     },
     reps: {
       type: Number,
       required: true,
-      integer: true,
     },
     date: {
       type: Date,
