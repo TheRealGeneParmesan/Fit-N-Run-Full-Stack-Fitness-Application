@@ -236,51 +236,6 @@ code {
   height: 200px;
 }
 
-@media screen and (max-width: 1300px) {
-  .signupContainer {
-    width:40%;
-  }  
-  .signupForm {
-    height: auto;
-    padding: 20px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .signupContainer {
-    width: 60%;
-  }  
-  .signupForm {
-    height: auto;
-    padding: 20px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .signupContainer {
-    width: 80%;
-  }  
-  .signupForm {
-    height: auto;
-    padding: 20px;
-  }
-}
-
-
-
-.card-header {
-  color: turquoise;
-  font-weight: normal;
-  font-size: 3rem;
-  text-align: center;
-}
-
-
-.signupBtn {
-  background-color: turquoise;
-  font-family: 'Oswald';
-  font-weight: bold;
-}
 
 .signupPage {
   height: 100vh;
