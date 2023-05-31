@@ -198,7 +198,18 @@ code {
 .loginContainer {
   margin: auto;
   width: 50%;
-  margin-bottom: 15rem;
+  margin-bottom: 18rem;
+  max-width: 400px; 
+  background-color:rgba(0, 0, 0, 0.4);
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+}
+
+.loginHeader {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  align-self: center;
 }
 
 .loginBtn {
@@ -226,6 +237,17 @@ code {
   margin: auto;
   width: 50%;
   margin-bottom: 15rem;
+  max-width: 400px; 
+  background-color:rgba(0, 0, 0, 0.4);
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+}
+
+.signupHeader {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  align-self: center;
 }
 
 .signupBtn {
@@ -429,7 +451,7 @@ code {
 
   .handPoint {
     font-size: 3rem;
-    color: #black;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
