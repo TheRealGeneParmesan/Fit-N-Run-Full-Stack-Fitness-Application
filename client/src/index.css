@@ -215,21 +215,71 @@ code {
   background-position: center;
 }
 
+.signupContainer {
+  margin: auto;
+  width: 20%;
+  
+  background-color:rgba(0, 0, 0, 0.4);
+}
+
 .signupForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 600px; 
+  margin: auto;
+  margin-bottom: 50px;
+  color: turquoise;
+  font-family: 'Oswald';
+  height: 200px;
 }
 
-.signupContainer {
-  margin: auto;
-  width: 50%;
-  margin-bottom: 15rem;
+@media screen and (max-width: 1300px) {
+  .signupContainer {
+    width:40%;
+  }  
+  .signupForm {
+    height: auto;
+    padding: 20px;
+  }
 }
+
+@media screen and (max-width: 800px) {
+  .signupContainer {
+    width: 60%;
+  }  
+  .signupForm {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .signupContainer {
+    width: 80%;
+  }  
+  .signupForm {
+    height: auto;
+    padding: 20px;
+  }
+}
+
+
+
+.card-header {
+  color: turquoise;
+  font-weight: normal;
+  font-size: 3rem;
+  text-align: center;
+}
+
 
 .signupBtn {
   background-color: turquoise;
+  font-family: 'Oswald';
+  font-weight: bold;
 }
 
 .signupPage {
@@ -429,7 +479,7 @@ code {
 
   .handPoint {
     font-size: 3rem;
-    color: #black;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -484,5 +534,79 @@ code {
       font-size: 1.5rem;
     }
   }
+
+  .stopPage {
+    background-color: #bbcdda;
+    min-height: 100vh;
+    overflow: hidden; 
+  }
+
+  .stopwatch-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Oswald';
+    font-size: 4rem;
+    color:black;
+    text-shadow: turquoise 0 0 6px;
+  }
+
+  .stopwatch-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: black;
+    font-size: 50px;
+    color: turquoise;
+    margin: auto;
+  }
+
+  .stopwatch-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .stopwatch-buttons button {
+    background-color: black;
+    margin: 0 5px; 
+    color: turquoise;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 2rem;
+    font-family: 'Oswald';
+  }
+
+  .stopwatch-buttons button:hover {
+    background-color: white;
+    color: turquoise;
+    border-style: none;
+    font-size: 2rem;
+    font-family: 'Oswald';
+    cursor: grab;
+  }
+
+
+
+  #root {
+    background-color: #bbcdda
+  }
+
+  .clock-face {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: turquoise
+}
+
 
 
