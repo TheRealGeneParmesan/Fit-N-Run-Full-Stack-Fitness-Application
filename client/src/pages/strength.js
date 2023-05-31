@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import strengthBg from "../images/strengthImg.jpg";
 import { Container } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
+import { ADD_STRENGTH } from "../utils/mutations";
 
 const Strength = () => {
     const [activity, setActivity] = useState('');
@@ -8,6 +10,7 @@ const Strength = () => {
     const [sets, setSets] = useState('');
     const [weight, setWeight] = useState('');
     const [date, setDate] = useState('');
+    const [saveStrength, { error }] = useMutation(ADD_STRENGTH);
 
     const handleActivityChange = (e) => {
         setActivity(e.target.value);
@@ -29,9 +32,20 @@ const Strength = () => {
         setDate(e.target.value);
     };
 
-    const handleStrengthSubmit = (e) => {
+    const handleStrengthSubmit = async (e) => {
         e.preventDefault();
-
+        console.log(activity, reps, sets, weight, date);
+        await saveStrength({
+            variables: {
+                input: {
+                    name: activity,
+                    reps: reps,
+                    sets: sets,
+                    weight: weight,
+                    date: date
+                }
+            }
+        });
 
         setActivity('');
         setReps('');
