@@ -5,9 +5,9 @@ const DONATE = gql`
         donationSession
     }
 `
-function DonateButton() {
+const DonateButton = () => {
     // lazy query doesn't run right away
-    const [startDonation, {loading, error, data }] = useLazyQuery(DONATE, {
+    const [startDonation, { loading, error, data }] = useLazyQuery(DONATE, {
         onCompleted: (queryData) => {
             console.log(queryData);
             let data = JSON.parse(queryData.donationSession);
@@ -22,7 +22,9 @@ function DonateButton() {
     console.log(data);
 
     return (
-        <button onClick={() => startDonation()}>Donate!</button>
+        <div className="donateContainer" >
+            <button className="donate-button" onClick={() => startDonation()}>Donate!</button>
+        </div>
     );
 }
 

@@ -17,7 +17,7 @@ const CardioSchema = new Schema(
             required: false,
         },
         duration: {
-            type: Number, 
+            type: Number,
             required: true,
         },
         date: {
