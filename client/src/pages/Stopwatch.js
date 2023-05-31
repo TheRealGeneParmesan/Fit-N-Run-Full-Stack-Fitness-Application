@@ -38,9 +38,9 @@ const Stopwatch = () => {
     };
 
     return (
-        <Container>
+        <Container className="stopPage">
             <div className="stopwatch">
-                <h1>Stopwatch</h1>
+                <h1 className="stopwatch-title">Stopwatch</h1>
                 <div className="stopwatch-display">
                     <span>{minutes.toString().padStart(2, '0')}:</span>
                     <span>{seconds.toString().padStart(2, '0')}:</span>
@@ -55,7 +55,7 @@ const Stopwatch = () => {
 
             <div className="timer-container">
                 <h2>Timer</h2>
-                <Timer initialDuration={0} displayedDuration={null} />
+                <Timer />
             </div>
         </Container>
     );

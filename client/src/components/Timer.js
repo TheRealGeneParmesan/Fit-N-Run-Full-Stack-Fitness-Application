@@ -1,91 +1,125 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+// Testing
+const Timer = () => {
+    const [time, setTime] = useState({
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    });
+    const [isRunning, setIsRunning] = useState(false);
 
-// const Timer = ({ initialDuration, displayedDuration }) => {
-//   const [duration, setDuration] = useState(initialDuration);
-//   const [minutes, setMinutes] = useState(displayedDuration);
-//   const [seconds, setSeconds] = useState(0);
-//   const [isRunning, setIsRunning] = useState(false);
+    useEffect(() => {
+        let interval = null;
 
-//   useEffect(() => {
-//     let intervalId;
+        if (isRunning) {
+            interval = setInterval(() => {
+                setTime(prevTime => {
+                    let newSeconds = prevTime.seconds - 1;
+                    let newMinutes = prevTime.minutes;
+                    let newHours = prevTime.hours;
 
-//     if (isRunning) {
-//       intervalId = setInterval(() => {
-//         if (seconds === 0) {
-//           if (minutes === 0) {
-//             stopTimer();
-//             return;
-//           }
-//           setMinutes((prevMinutes) => prevMinutes - 1);
-//           setSeconds(59);
-//         } else {
-//           setSeconds((prevSeconds) => prevSeconds - 1);
-//         }
-//       }, 1000);
-//     }
+                    if (newSeconds < 0) {
+                        newSeconds = 59;
+                        newMinutes -= 1;
+                    }
+                    if (newMinutes < 0) {
+                        newMinutes = 59;
+                        newHours -= 1;
+                    }
 
-//     return () => {
-//       clearInterval(intervalId);
-//     };
-//   }, [isRunning, minutes, seconds]);
+                    if (newHours === 0 && newMinutes === 0 && newSeconds === 0) {
+                        clearInterval(interval);
+                        setIsRunning(false);
+                    }
 
-//   const startTimer = () => {
-//     setIsRunning(true);
-//   };
+                    return {
+                        hours: newHours,
+                        minutes: newMinutes,
+                        seconds: newSeconds
+                    };
+                });
+            }, 1000);
+        } else {
+            clearInterval(interval);
+        }
 
-//   const stopTimer = () => {
-//     setIsRunning(false);
-//   };
+        return () => clearInterval(interval);
+    }, [isRunning]);
 
-//   const resetTimer = () => {
-//     setMinutes(displayedDuration);
-//     setSeconds(0);
-//     setIsRunning(false);
-//   };
+    const handleStart = () => {
+        setIsRunning(true);
+    };
 
-//   const handleDurationChange = (e) => {
-//     const { value } = e.target;
-//     const parsedValue = parseInt(value) || 0;
-//     setDuration(parsedValue);
-//     setMinutes(parsedValue);
-//   };
+    const handleStop = () => {
+        setIsRunning(false);
+    };
 
-//   return (
-//     <div>
-//       <h2>
-//         {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
-//       </h2>
-//       {displayedDuration !== null && (
-//         <input type="number" value={duration} onChange={handleDurationChange} />
-//       )}
-//       <button onClick={startTimer}>Start</button>
-//       <button onClick={stopTimer}>Stop</button>
-//       <button onClick={resetTimer}>Reset</button>
-//     </div>
-//   );
-// };
+    const handleReset = () => {
+        setTime({ hours: 0, minutes: 0, seconds: 0 });
+        setIsRunning(false);
+    };
 
-// const Timers = () => {
-//   return (
-//     <div>
-//       <div>
-//         <h3>Timer 1 (25 minutes)</h3>
-//         <Timer initialDuration={25} displayedDuration={null} />
-//       </div>
-//       <div>
-//         <h3>Timer 2 (15 minutes)</h3>
-//         <Timer initialDuration={15} displayedDuration={null} />
-//       </div>
-//       <div>
-//         <h3>Timer 3 (10 minutes)</h3>
-//         <Timer initialDuration={10} displayedDuration={null} />
-//       </div>
-//       <div>
-//         <h3>Timer 4 (5 minutes)</h3>
-//         <Timer initialDuration={5} displayedDuration={null} />
-//       </div>
-//     </div>
-//   );
-// };
+    const increaseTime = (unit) => {
+        setTime(prevTime => {
+            let newTime = { ...prevTime };
+            newTime[unit] += 1;
+            return newTime;
+        });
+    };
 
-// export default Timer;
+    const decreaseTime = (unit) => {
+        setTime(prevTime => {
+            let newTime = { ...prevTime };
+            if (newTime[unit] > 0) {
+                newTime[unit] -= 1;
+            }
+            return newTime;
+        });
+    };
+
+    return (
+        <div className="timer-container">
+            <div className="clock">
+                <div className="clock-face">
+                    <span className="clock-time">{time.hours.toString().padStart(2, '0')}:{time.minutes.toString().padStart(2, '0')}</span>
+                </div>
+                <div className="time-controls">
+                    <div className="time-unit">
+                        <button className="time-button" onClick={() => increaseTime('hours')}>
+                            <span>&#x25B2;</span>
+                        </button>
+                        <span className="time">{time.hours.toString().padStart(2, '0')}</span>
+                        <button className="time-button" onClick={() => decreaseTime('hours')}>
+                            <span>&#x25BC;</span>
+                        </button>
+                    </div>
+                    <div className="time-unit">
+                        <button className="time-button" onClick={() => increaseTime('minutes')}>
+                            <span>&#x25B2;</span>
+                        </button>
+                        <span className="time">{time.minutes.toString().padStart(2, '0')}</span>
+                        <button className="time-button" onClick={() => decreaseTime('minutes')}>
+                            <span>&#x25BC;</span>
+                        </button>
+                    </div>
+                    <div className="time-unit">
+                        <button className="time-button" onClick={() => increaseTime('seconds')}>
+                            <span>&#x25B2;</span>
+                        </button>
+                        <span className="time">{time.seconds.toString().padStart(2, '0')}</span>
+                        <button className="time-button" onClick={() => decreaseTime('seconds')}>
+                            <span>&#x25BC;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div className="Timercontrols">
+                <button className="start-button" onClick={handleStart}>Start</button>
+                <button className="stop-button" onClick={handleStop}>Stop</button>
+                <button className="reset-button" onClick={handleReset}>Reset</button>
+            </div>
+        </div>
+    );
+};
+
+export default Timer;
