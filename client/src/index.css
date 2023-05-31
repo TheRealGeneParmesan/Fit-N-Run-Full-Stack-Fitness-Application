@@ -241,6 +241,44 @@ code {
   background-position: center;
 }
 
+.historyPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.historyContainer {
+  margin: auto;
+  width: 50%;
+  margin-bottom: 15rem;
+  background-color:rgba(0, 0, 0, 0.4);
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+}
+
+.historyHeader {
+  font-size: 3rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.workoutHistory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.cardioHeader, .strengthHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
 .form-input{
   margin-bottom: 1rem;
 }

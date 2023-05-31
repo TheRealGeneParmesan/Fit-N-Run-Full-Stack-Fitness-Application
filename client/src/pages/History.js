@@ -119,8 +119,8 @@ const History = () => {
     <main className="historyPage" style={{ backgroundImage: `url(${backHistory})` }}>
       <div className="col-12 col-lg-10">
         <div className="historyContainer card">
-          <h4 className="historyHeader">Your Workout History</h4>
-            <div className="card-body">
+          <h4 className="historyHeader">Workout History</h4>
+            <div className="workoutHistory card-body">
                 <div className="cardioHistory">
                     <h5 className="cardioHeader">Cardio</h5>
                     {cardioHistory?.length ? (
@@ -155,7 +155,7 @@ const History = () => {
                         </div>
                     ) : (
                         <div>
-                            <h6 className="cardioDate">No cardio workouts yet!</h6>
+                            <h6 className="cardioDate">Get started!</h6>
                         </div>
                     )}
                     {cardioHistory?.length > 6 && cardioHistory?.length > displayCardio ? (
@@ -198,7 +198,7 @@ const History = () => {
                         </div>
                     ) : (
                         <div>
-                            <h6 className="strengthDate">No strength workouts yet!</h6>
+                            <h6 className="strengthDate">Get started!</h6>
                         </div>
                     )}
                     {strengthHistory?.length > 6 && strengthHistory?.length > displayStrength ? (

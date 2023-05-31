@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import cardioImg from "../images/cardioImg.jpg";
+import { useMutation } from "@apollo/client";
+import { ADD_CARDIO } from "../utils/mutations";
 
 const Cardio = () => {
     const [cardio, setCardio] = useState('');
     const [cardioDuration, setCardioDuration] = useState('');
     const [cardioDistance, setCardioDistance] = useState('');
     const [date, setDate] = useState('');
+    const [saveCardio, { error }] = useMutation(ADD_CARDIO);
 
     const handleCardioChange = (e) => {
         setCardio(e.target.value);
@@ -23,9 +26,19 @@ const Cardio = () => {
         setDate(e.target.value);
     };
 
-    const handleCardioSubmit = (e) => {
+    const handleCardioSubmit = async (e) => {
         e.preventDefault();
-
+        console.log(cardio, cardioDuration, cardioDistance, date);
+        await saveCardio({
+            variables: {
+                input: {
+                    name: cardio,
+                    distance: cardioDistance,
+                    duration: cardioDuration,
+                    date: date
+                }
+            }
+        });
         setCardio('');
         setCardioDuration('');
         setCardioDistance('');
