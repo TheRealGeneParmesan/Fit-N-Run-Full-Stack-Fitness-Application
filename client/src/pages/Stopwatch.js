@@ -52,11 +52,7 @@ const Stopwatch = () => {
                     <button onClick={resetStopwatch}>Reset</button>
                 </div>
             </div>
-
-            <div className="timer-container">
-                <h2>Timer</h2>
-                <Timer />
-            </div>
+            <Timer />
         </Container>
     );
 };
