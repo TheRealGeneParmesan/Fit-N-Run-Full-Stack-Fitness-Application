@@ -12,6 +12,8 @@ import Donation from "./pages/Donation";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import Auth from "./utils/auth";
+import Stopwatch from "./pages/Stopwatch";
+import History from "./pages/History";
 
 import {
   ApolloClient,
@@ -63,7 +65,8 @@ const App = () => {
             <Route path="/history" element={<History />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            {/* <Route path="/nutrition" element={<Nutrition />} /> */}
+            <Route path="/stopwatch" element={<Stopwatch />} />
+            <Route path="/history" element={<History />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}

@@ -1,10 +1,10 @@
 import '../index.css'
 
-function Cancel() {
+const Cancel = () => {
     return (
-        <div className="canceldonation">
+        <div className="cancelDonation">
             <header>
-                <h1>Sorry to see you canceled your donation</h1>
+                <h1>Sorry To See You Canceled Your Donation</h1>
             </header>
         </div>
     )
