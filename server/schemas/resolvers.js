@@ -51,16 +51,18 @@ const resolvers = {
             return { token, user };
         },
 
-        saveCardio: async (parent, { name, label, duration, date }, context) => {
+        saveCardio: async (parent, { input }, context) => {
             if (context.user) {
-                return Cardio.create({ name, label, duration, date })
+                const { name, distance, duration, date } = input;
+                return Cardio.create({ name, distance, duration, date, userId: context.user._id })
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
         },
 
-        saveStrength: async (parent, { name, weight, sets, reps, date }, context) => {
+        saveStrength: async (parent, { input }, context) => {
             if (context.user) {
-                return Strength.create({ name, weight, sets, reps, date })
+                const { name, weight, sets, reps, date } = input;
+                return Strength.create({ name, weight, sets, reps, date, userId: context.user._id })
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
         },

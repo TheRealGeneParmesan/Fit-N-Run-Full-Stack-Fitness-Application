@@ -58,8 +58,8 @@ type Query {
 type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
-  saveCardio(input: CardioInput): User
-  saveStrength(input: StrengthInput): User
+  saveCardio(input: CardioInput): Cardio
+  saveStrength(input: StrengthInput): Strength
   removeCardio(cardioId: ID!): User
   removeStrength(strengthId: ID!): User
 }

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import strengthBg from "../images/strengthImg.jpg";
 import { Container } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
+import { ADD_STRENGTH } from "../utils/mutations";
 
 const Strength = () => {
     const [activity, setActivity] = useState('');
-    const [reps, setReps] = useState('');
-    const [sets, setSets] = useState('');
-    const [weight, setWeight] = useState('');
+    const [reps, setReps] = useState(10);
+    const [sets, setSets] = useState(3);
+    const [weight, setWeight] = useState(30);
     const [date, setDate] = useState('');
+    const [saveStrength, { error }] = useMutation(ADD_STRENGTH);
 
     const handleActivityChange = (e) => {
         setActivity(e.target.value);
@@ -29,9 +32,20 @@ const Strength = () => {
         setDate(e.target.value);
     };
 
-    const handleStrengthSubmit = (e) => {
+    const handleStrengthSubmit = async (e) => {
         e.preventDefault();
-
+        const { data } = await saveStrength({
+            variables: {
+                input: {
+                    name: activity,
+                    reps: reps,
+                    sets: sets,
+                    weight: weight,
+                    date: date
+                }
+            }
+        });
+        console.log(data);
 
         setActivity('');
         setReps('');
@@ -53,15 +67,15 @@ const Strength = () => {
                         </div>
                         <div className="form-group label">
                             <label>Reps:</label>
-                            <input type="text" className="form-control" placeholder="15" value={reps} onChange={handleRepsChange} />
+                            <input type="number" className="form-control" placeholder="15" value={reps} onChange={handleRepsChange} />
                         </div>
                         <div className="form-group label">
                             <label>Sets:</label>
-                            <input type="text" className="form-control" placeholder="3" value={sets} onChange={handleSetsChange} />
+                            <input type="number" className="form-control" placeholder="3" value={sets} onChange={handleSetsChange} />
                         </div>
                         <div className="form-group label">
                             <label>Weight (Optional):</label>
-                            <input type="text" className="form-control" placeholder="45" value={weight} onChange={handleWeightChange} />
+                            <input type="number" className="form-control" placeholder="45" value={weight} onChange={handleWeightChange} />
                         </div>
                         <div className="form-group label">
                             <label>Date:</label>
