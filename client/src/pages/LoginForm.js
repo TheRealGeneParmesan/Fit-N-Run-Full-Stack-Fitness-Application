@@ -34,7 +34,7 @@ const Login = () => {
     <main className="loginPage" style={{ backgroundImage: `url(${backLogin})` }}>
       <div className="col-12 col-lg-10">
         <div className="loginContainer card">
-          <h4 className="card-header bg-dark text-light">Login</h4>
+          <h4 className="loginHeader card-header">Login</h4>
           <div className="card-body">
             {data ? (
               <Link to="/"></Link>
