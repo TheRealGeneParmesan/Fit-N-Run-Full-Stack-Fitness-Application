@@ -57,7 +57,7 @@ const Strength = () => {
     return (
         <div className="strengthImg" style={{ backgroundImage: `url(${strengthBg})` }}>
             <Container
-                classname="strengthContainer" >
+                className="strengthContainer" >
                 <div className="strengthForm">
                     <h1 className="strengthTitle"> Strength Training </h1>
                     <form onSubmit={handleStrengthSubmit}>
