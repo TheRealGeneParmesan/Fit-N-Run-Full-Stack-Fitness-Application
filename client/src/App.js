@@ -7,12 +7,12 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/LoginForm";
 import Signup from "./pages/SignupForm";
 import Cardio from "./pages/CardioPage";
+import History from "./pages/History";
 import Donation from "./pages/Donation";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import Auth from "./utils/auth";
 import Stopwatch from "./pages/Stopwatch";
-import History from "./pages/History";
 
 import {
   ApolloClient,
@@ -61,6 +61,7 @@ const App = () => {
             />
             <Route path="/cardio" element={<Cardio />} />
             <Route path="/strength" element={<Strength />} />
+            <Route path="/history" element={<History />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/stopwatch" element={<Stopwatch />} />

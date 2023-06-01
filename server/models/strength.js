@@ -27,6 +27,8 @@ const StrengthSchema = new Schema(
     date: {
       type: Date,
       required: true,
+      default: Date.now(),
+      get: (date) => date.toLocaleDateString(),
     },
     userId: {
       type: Schema.Types.ObjectId,
