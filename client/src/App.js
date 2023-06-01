@@ -13,7 +13,6 @@ import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import Auth from "./utils/auth";
 import Stopwatch from "./pages/Stopwatch";
-import History from "./pages/History";
 
 import {
   ApolloClient,
