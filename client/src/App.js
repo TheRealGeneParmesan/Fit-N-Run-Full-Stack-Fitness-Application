@@ -65,7 +65,6 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/stopwatch" element={<Stopwatch />} />
-            <Route path="/history" element={<History />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
