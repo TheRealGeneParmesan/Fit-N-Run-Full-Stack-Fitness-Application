@@ -29,7 +29,7 @@ const Cardio = () => {
 
     const handleCardioSubmit = async (e) => {
         e.preventDefault();
-        const {data} = await saveCardio({
+        const { data } = await saveCardio({
             variables: {
                 input: {
                     name: cardio,
@@ -44,7 +44,7 @@ const Cardio = () => {
         setCardio('');
         setCardioDuration('');
         setCardioDistance('');
-        setCardioDistance('');
+        setDate('');
     };
 
     return (

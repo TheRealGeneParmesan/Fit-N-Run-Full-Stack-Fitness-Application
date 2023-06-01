@@ -102,15 +102,6 @@ const Timer = () => {
                             <span>&#x25BC;</span>
                         </button>
                     </div>
-                    <div className="time-unit">
-                        <button className="time-button" onClick={() => increaseTime('seconds')}>
-                            <span>&#x25B2;</span>
-                        </button>
-                        <span className="time">{time.seconds.toString().padStart(2, '0')}</span>
-                        <button className="time-button" onClick={() => decreaseTime('seconds')}>
-                            <span>&#x25BC;</span>
-                        </button>
-                    </div>
                 </div>
                 <div className="timer-buttons">
                     <button className="start-button" onClick={handleStart}>Start</button>
