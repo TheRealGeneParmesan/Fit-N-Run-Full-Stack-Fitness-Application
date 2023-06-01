@@ -7,6 +7,8 @@ type User {
   username: String
   email: String
   password: String
+  cardio: [Cardio]
+  strength: [Strength]
 }
 
 type Cardio {
@@ -15,7 +17,6 @@ type Cardio {
   distance: Int
   duration: Int
   date: String
-  userId: ID
 }
 
 type Strength {
@@ -25,7 +26,6 @@ type Strength {
   sets: Int
   reps: Int
   date: String
-  userId: ID
 }
 
 type Auth {
