@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Container } from "react-bootstrap";
 import cardioImg from "../images/cardioImg.jpg";
+import { Container } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_CARDIO } from "../utils/mutations";
 
 const Cardio = () => {
     const [cardio, setCardio] = useState('');
-    const [cardioDuration, setCardioDuration] = useState('');
-    const [cardioDistance, setCardioDistance] = useState('');
+    const [cardioDuration, setCardioDuration] = useState(0);
+    const [cardioDistance, setCardioDistance] = useState(0);
     const [date, setDate] = useState('');
     const [saveCardio, { error }] = useMutation(ADD_CARDIO);
 
@@ -22,14 +22,14 @@ const Cardio = () => {
     const handleCardioDistanceChange = (e) => {
         setCardioDistance(e.target.value);
     };
+
     const handleDateChange = (e) => {
         setDate(e.target.value);
     };
 
     const handleCardioSubmit = async (e) => {
         e.preventDefault();
-        console.log(cardio, cardioDuration, cardioDistance, date);
-        await saveCardio({
+        const {data} = await saveCardio({
             variables: {
                 input: {
                     name: cardio,
@@ -39,6 +39,8 @@ const Cardio = () => {
                 }
             }
         });
+        console.log(data);
+
         setCardio('');
         setCardioDuration('');
         setCardioDistance('');
@@ -58,11 +60,11 @@ const Cardio = () => {
                         </div>
                         <div className="form-group">
                             <label>Duration:</label>
-                            <input type="text" className="form-control" placeholder="2 Hours" value={cardioDuration} onChange={handleCardioDurationChange} />
+                            <input type="number" className="form-control" placeholder="2 Hours" value={cardioDuration} onChange={handleCardioDurationChange} />
                         </div>
                         <div className="form-group">
                             <label>Distance (Miles):</label>
-                            <input type="text" className="form-control" placeholder="3" value={cardioDistance} onChange={handleCardioDistanceChange} />
+                            <input type="number" className="form-control" placeholder="3" value={cardioDistance} onChange={handleCardioDistanceChange} />
                         </div>
                         <div className="form-group label">
                             <label>Date:</label>
