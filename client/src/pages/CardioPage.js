@@ -43,8 +43,8 @@ const Cardio = () => {
         console.log(data);
 
         setCardio('');
-        setCardioDuration(0);
-        setCardioDistance(0);
+        setCardioDuration('');
+        setCardioDistance('');
         setDate('');
     };
 
