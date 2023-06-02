@@ -8,7 +8,7 @@ const Strength = () => {
     const [activity, setActivity] = useState('');
     const [reps, setReps] = useState(10);
     const [sets, setSets] = useState(3);
-    const [weight, setWeight] = useState(30);
+    const [weight, setWeight] = useState(45);
     const [date, setDate] = useState('');
     const [saveStrength, { error }] = useMutation(ADD_STRENGTH);
 
@@ -48,9 +48,9 @@ const Strength = () => {
         console.log(data);
 
         setActivity('');
-        setReps('');
-        setSets('');
-        setWeight('');
+        setReps(0);
+        setSets(0);
+        setWeight(0);
         setDate('');
     };
 

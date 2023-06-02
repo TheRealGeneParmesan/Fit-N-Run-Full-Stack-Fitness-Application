@@ -707,6 +707,43 @@ code {
   cursor: grab;
 }
 
+.historyIcon {
+  height: 1rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
+}
 
+.historyDiv {
+  margin-bottom: .5rem;
+}
 
+.date {
+  min-width: 70px;
+  margin-right: 16px;
+  font-weight: bold;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  color: white;
+}
 
+.historyItem {
+  width: 15rem;
+  background-color: grey;
+  opacity: 85%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.historyName {
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+.historyIndex {
+  margin: 0 auto;
+  align-self: center;
+}
