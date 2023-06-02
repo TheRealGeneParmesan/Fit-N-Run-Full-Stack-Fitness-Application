@@ -78,36 +78,34 @@ const Timer = () => {
 
     return (
         <div className="timer-container">
-            <div className="clock">
-                <h1 className="timer-title"> Timer </h1>
-                <div className="clock-face">
-                    <span className="clock-time">{time.hours.toString().padStart(2, '0')}:{time.minutes.toString().padStart(2, '0')}</span>
+            <h1 className="timer-title"> Timer </h1>
+            <div className="clock-face">
+                <span className="clock-time">{time.hours.toString().padStart(2, '0')}:{time.minutes.toString().padStart(2, '0')}</span>
+            </div>
+            <div className="time-controls">
+                <div className="time-unit">
+                    <button className="time-button" onClick={() => increaseTime('hours')}>
+                        <span>&#x25B2;</span>
+                    </button>
+                    <span className="time">Hours&nbsp;&nbsp;&nbsp;</span>
+                    <button className="time-button" onClick={() => decreaseTime('hours')}>
+                        <span>&#x25BC;</span>
+                    </button>
                 </div>
-                <div className="time-controls">
-                    <div className="time-unit">
-                        <button className="time-button" onClick={() => increaseTime('hours')}>
-                            <span>&#x25B2;</span>
-                        </button>
-                        <span className="time">{time.hours.toString().padStart(2, '0')}</span>
-                        <button className="time-button" onClick={() => decreaseTime('hours')}>
-                            <span>&#x25BC;</span>
-                        </button>
-                    </div>
-                    <div className="time-unit">
-                        <button className="time-button" onClick={() => increaseTime('minutes')}>
-                            <span>&#x25B2;</span>
-                        </button>
-                        <span className="time">{time.minutes.toString().padStart(2, '0')}</span>
-                        <button className="time-button" onClick={() => decreaseTime('minutes')}>
-                            <span>&#x25BC;</span>
-                        </button>
-                    </div>
+                <div className="time-unit">
+                    <button className="time-button" onClick={() => increaseTime('minutes')}>
+                        <span>&#x25B2;</span>
+                    </button>
+                    <span className="time">Minutes</span>
+                    <button className="time-button" onClick={() => decreaseTime('minutes')}>
+                        <span>&#x25BC;</span>
+                    </button>
                 </div>
-                <div className="timer-buttons">
-                    <button className="start-button" onClick={handleStart}>Start</button>
-                    <button className="stop-button" onClick={handleStop}>Stop</button>
-                    <button className="reset-button" onClick={handleReset}>Reset</button>
-                </div>
+            </div>
+            <div className="timer-buttons">
+                <button className="start-button" onClick={handleStart}>Start</button>
+                <button className="stop-button" onClick={handleStop}>Stop</button>
+                <button className="reset-button" onClick={handleReset}>Reset</button>
             </div>
         </div>
     );
