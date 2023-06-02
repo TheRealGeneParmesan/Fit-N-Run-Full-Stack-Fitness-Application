@@ -1,6 +1,6 @@
 # Fit N Run
 
-## Description:
+## Description
 
 Fit N Run is a fitness application that allows users to manually log workouts and daily food intake. Users can view their past activities to ensure they are maintaining their fitness goals in addition to timing a workout from directly within the application. 
 
