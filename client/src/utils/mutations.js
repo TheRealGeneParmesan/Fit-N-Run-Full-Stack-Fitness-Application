@@ -27,6 +27,7 @@ export const ADD_USER = gql`
 export const ADD_CARDIO = gql`
   mutation saveCardio($input: CardioInput!) {
     saveCardio(input: $input) {
+      _id
       name
       distance
       duration
@@ -38,6 +39,7 @@ export const ADD_CARDIO = gql`
 export const ADD_STRENGTH = gql`
   mutation saveStrength($input: StrengthInput!) {
     saveStrength(input: $input) {
+      _id
         name
         weight
         sets
