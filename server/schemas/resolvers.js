@@ -7,7 +7,11 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id }).select('-__v -password').populate('fithub')
+                const user = await User.findOne({ _id: context.user._id })
+                    .select('-__v -password')
+                    .populate('cardio')
+                    .populate('strength');
+                return user;
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');
         },
@@ -54,29 +58,36 @@ const resolvers = {
         saveCardio: async (parent, { input }, context) => {
             if (context.user) {
                 const { name, distance, duration, date } = input;
-                return Cardio.create({ name, distance, duration, date, userId: context.user._id })
+                const cardio = await Cardio.create({ name, distance, duration, date, userId: context.user._id });
+                const user = await User.findByIdAndUpdate(context.user._id, { $push: { cardio: cardio._id } }, { new: true });
+                return cardio;
             }
-            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');
         },
 
         saveStrength: async (parent, { input }, context) => {
             if (context.user) {
                 const { name, weight, sets, reps, date } = input;
-                return Strength.create({ name, weight, sets, reps, date, userId: context.user._id })
+                const strength = await Strength.create({ name, weight, sets, reps, date, userId: context.user._id });
+                await User.findByIdAndUpdate(context.user._id, { $push: { strength: strength._id } });
+                return strength;
             }
-            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');
         },
 
         removeCardio: async (parent, { cardioId }, context) => {
             if (context.user) {
-                return Cardio.findOneAndDelete({ _id: cardioId })
+                await Cardio.findOneAndDelete({ _id: cardioId });
+                const user = await User.findByIdAndUpdate(context.user._id, { $pull: { cardio: cardioId } }, { new: true });
+                return user;
             }
-            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
+            throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');
         },
-
         removeStrength: async (parent, { strengthId }, context) => {
             if (context.user) {
-                return Strength.findOneAndDelete({ _id: strengthId })
+                await Cardio.findOneAndDelete({ _id: strengthId });
+                const user = await User.findByIdAndUpdate(context.user._id, { $pull: { strength: strengthId } }, { new: true });
+                return user;
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)')
         },

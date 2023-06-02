@@ -4,12 +4,13 @@ import { Container } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_CARDIO } from "../utils/mutations";
 
+
 const Cardio = () => {
     const [cardio, setCardio] = useState('');
     const [cardioDuration, setCardioDuration] = useState(0);
     const [cardioDistance, setCardioDistance] = useState(0);
     const [date, setDate] = useState('');
-    const [saveCardio, { error }] = useMutation(ADD_CARDIO);
+    const [saveCardio, { error, data }] = useMutation(ADD_CARDIO);
 
     const handleCardioChange = (e) => {
         setCardio(e.target.value);
