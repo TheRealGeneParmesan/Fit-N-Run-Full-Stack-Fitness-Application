@@ -59,7 +59,7 @@ const resolvers = {
             if (context.user) {
                 const { name, distance, duration, date } = input;
                 const cardio = await Cardio.create({ name, distance, duration, date, userId: context.user._id });
-                await User.findByIdAndUpdate(context.user._id, { $push: { cardio: cardio._id } });
+                const user = await User.findByIdAndUpdate(context.user._id, { $push: { cardio: cardio._id } }, { new: true });
                 return cardio;
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');

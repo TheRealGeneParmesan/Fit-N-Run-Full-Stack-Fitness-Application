@@ -48,9 +48,9 @@ const Strength = () => {
         console.log(data);
 
         setActivity('');
-        setReps(0);
-        setSets(0);
-        setWeight(0);
+        setReps('');
+        setSets('');
+        setWeight('');
         setDate('');
     };
 
