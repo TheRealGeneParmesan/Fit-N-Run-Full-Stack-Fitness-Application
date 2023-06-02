@@ -20,28 +20,16 @@ const History = () => {
   let currentDate;
 
   const { loading, data, error } = useQuery(GET_ME);
-  console.log(data)
 
   useEffect(() => {
     if (data) {
-      setUserData(data.me);
-      console.log("userData", data.me)
-      if (data.me.cardioHistory) {
-        setCardioHistory(data.me.cardioHistory);
-        console.log("cardioHistory", data.me.cardioHistory)
-      } else {
-        setCardioHistory([]);
-      }
-      if (data.me.strengthHistory) {
-        setStrengthHistory(data.me.strengthHistory);
-        console.log("strengthHistory", data.me.strengthHistory)
-      } else {
-        setStrengthHistory([]);
-      }
+      setCardioHistory(data.me.cardio);
+      setStrengthHistory(data.me.strength);
     }
   }, [data]);
 
-  const handleRemoveCardio = async (id) => {
+  const handleRemoveCardio = async (cardioId) => {
+    console.log(cardioId);
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -50,7 +38,7 @@ const History = () => {
 
     try {
       const { data } = await removeCardioHistory({
-        variables: { id },
+        variables: { cardioId },
       });
 
       if (!data) {
@@ -58,7 +46,7 @@ const History = () => {
       }
 
       const updatedCardioHistory = cardioHistory?.filter(
-        (cardio) => cardio.id !== id
+        (cardio) => cardio._id !== cardioId
       );
       setCardioHistory(updatedCardioHistory);
     } catch (err) {
@@ -66,7 +54,8 @@ const History = () => {
     }
   };
 
-  const handleRemoveStrength = async (id) => {
+  const handleRemoveStrength = async (strengthId) => {
+    console.log(strengthId)
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -75,7 +64,7 @@ const History = () => {
 
     try {
       const { data } = await removeStrengthHistory({
-        variables: { id },
+        variables: { strengthId },
       });
 
       if (!data) {
@@ -83,7 +72,7 @@ const History = () => {
       }
 
       const updatedStrengthHistory = strengthHistory?.filter(
-        (strength) => strength.id !== id
+        (strength) => strength._id !== strengthId
       );
       setStrengthHistory(updatedStrengthHistory);
     } catch (err) {
@@ -137,7 +126,7 @@ const History = () => {
                             <p className="cardioDuration">{cardio.duration} minutes</p>
                             <p className="cardioDistance">{cardio.distance} miles</p>
                             <p className="cardioCalories">{cardio.calories} calories</p>
-                            <button className="cardioDelete" onClick={() => handleRemoveCardio(cardio.id)}>Delete</button>
+                            <button className="cardioDelete" onClick={() => handleRemoveCardio(cardio._id)}>Delete</button>
                           </div>
                         </div>
                       );
@@ -148,7 +137,7 @@ const History = () => {
                           <p className="cardioDuration">{cardio.duration} minutes</p>
                           <p className="cardioDistance">{cardio.distance} miles</p>
                           <p className="cardioCalories">{cardio.calories} calories</p>
-                          <button className="cardioDelete" onClick={() => handleRemoveCardio(cardio.id)}>Delete</button>
+                          <button className="cardioDelete" onClick={() => handleRemoveCardio(cardio._id)}>Delete</button>
                         </div>
                       );
                     }
@@ -180,7 +169,7 @@ const History = () => {
                             <p className="strengthSets">{strength.sets} sets</p>
                             <p className="strengthReps">{strength.reps} reps</p>
                             <p className="strengthWeight">{strength.weight} lbs</p>
-                            <button className="strengthDelete" onClick={() => handleRemoveStrength(strength.id)}>Delete</button>
+                            <button className="strengthDelete" onClick={() => handleRemoveStrength(strength._id)}>Delete</button>
                           </div>
                         </div>
                       );
@@ -191,7 +180,7 @@ const History = () => {
                           <p className="strengthSets">{strength.sets} sets</p>
                           <p className="strengthReps">{strength.reps} reps</p>
                           <p className="strengthWeight">{strength.weight} lbs</p>
-                          <button className="strengthDelete" onClick={() => handleRemoveStrength(strength.id)}>Delete</button>
+                          <button className="strengthDelete" onClick={() => handleRemoveStrength(strength._id)}>Delete</button>
                         </div>
                       );
                     }

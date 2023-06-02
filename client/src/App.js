@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Nutrition from "./pages/Nutrition";
+import Nutrition from "./pages/Nutrition";
 import Strength from "./pages/Strength";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
@@ -65,6 +65,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/stopwatch" element={<Stopwatch />} />
+            <Route path="/nutrition" element={<Nutrition />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}

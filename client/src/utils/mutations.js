@@ -53,26 +53,18 @@ export const REMOVE_CARDIO = gql`
   mutation removeCardio($cardioId: ID!) {
     removeCardio(cardioId: $cardioId) {
       _id
-      username
-      email
-      cardio {
-        _id
-        name
-        distance
-        duration
-        date
-      }
+      name
+      distance
+      duration
+      date
     }
   }
 `;
 
+
 export const REMOVE_STRENGTH = gql`
   mutation removeStrength($strengthId: ID!) {
     removeStrength(strengthId: $strengthId) {
-      _id
-      username
-      email
-      strength {
         _id
         name
         weight
@@ -81,5 +73,4 @@ export const REMOVE_STRENGTH = gql`
         date
       }
     }
-  }
 `;
