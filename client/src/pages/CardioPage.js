@@ -43,8 +43,8 @@ const Cardio = () => {
         console.log(data);
 
         setCardio('');
-        setCardioDuration('');
-        setCardioDistance('');
+        setCardioDuration(0);
+        setCardioDistance(0);
         setDate('');
     };
 
@@ -60,7 +60,7 @@ const Cardio = () => {
                             <input type="text" className="form-control" placeholder="Marathon Running" value={cardio} onChange={handleCardioChange} />
                         </div>
                         <div className="form-group">
-                            <label>Duration:</label>
+                            <label>Duration (Minutes):</label>
                             <input type="number" className="form-control" placeholder="2 Hours" value={cardioDuration} onChange={handleCardioDurationChange} />
                         </div>
                         <div className="form-group">
