@@ -560,9 +560,45 @@ code {
     align-items: center;
   }
 
+  .successDonation {
+    background-color: black;
+  }
+
   .woody {
     border-style: none;
-    border-radius: 50px;
+    border-radius: 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cancelTitle {
+    font-family: 'Cherry Bomb One';
+    color: #ecb2f3;
+    text-shadow: black 0 0 6px;
+    background-color: #bbcdda;
+    font-size: 5rem;
+    max-width: 650px;
+  }
+
+  .cancelDonation {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cryImg {
+    border-style: none;
+    display: flex;
+    height: 600px;
+    width: 600px;
+  }
+
+  .will {
+    height: 600px;
+    width: 600px;
+    margin-right: 10px;
   }
 
   @media (max-width: 768px) {
