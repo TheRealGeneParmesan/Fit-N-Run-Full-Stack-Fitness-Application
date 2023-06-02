@@ -605,8 +605,8 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 300px;
+    width: 275px;
+    height: 275px;
     border-radius: 50%;
     background-color: black;
     font-size: 50px;
@@ -623,7 +623,7 @@ code {
   
   .stopwatch-buttons button {
     background-color: black;
-    margin: 0 5px; 
+    margin: 0 6px; 
     color: turquoise;
     border-radius: 10px;
     border-style: none;
@@ -656,20 +656,27 @@ code {
     text-shadow: turquoise 0 0 6px;
   }
 
-  .clock {
+  .timer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #bbcdda;
-    min-height: 100vh;
+    min-height: 50vh;
     overflow: hidden; 
-    padding-bottom: 100px;
+    margin-bottom: au
+  }
+
+  .time {
+    font-family: 'Oswald';
+    font-size: 2rem;
+    color:black;
+    text-shadow: turquoise 0 0 6px;
   }
 
   .clock-face {
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   border-radius: 50%;
   background-color: black;
   display: flex;
@@ -686,9 +693,19 @@ code {
   justify-content: center;
 }
 
+.time-button {
+  background-color: black;
+  margin: 0 6px 2px; 
+  color: turquoise;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 2rem;
+  font-family: 'Oswald';
+}
+
 .timer-buttons button {
   background-color: black;
-  margin: 0 5px; 
+  margin: 0 6px; 
   color: turquoise;
   border-radius: 10px;
   border-style: none;
