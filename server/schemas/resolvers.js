@@ -60,6 +60,28 @@ const resolvers = {
             return JSON.stringify({
                 url: session.url
             });
+        },
+        nutritionAPI: async (parent, {query}, context) => {
+            try {
+                if(context.user) {
+                    const url = `https://trackapi.nutritionix.com/v2/natural/nutrients`;
+                    const response = await fetch(url, {
+                        method: "POST",
+                        headers: {
+                            "x-app-id": "e606f177",
+                            "x-app-key": "cd709e0fbe0ce1eb752eff9c963777d1",
+                            "x-remote-user-id": "0",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(query)
+                    });
+                    const data = await response.json();
+                    return data;
+                }
+            }
+            catch (error) {
+                throw new Error('Connection error')
+            }
         }
     },
 
