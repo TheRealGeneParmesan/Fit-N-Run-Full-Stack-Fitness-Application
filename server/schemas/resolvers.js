@@ -38,20 +38,17 @@ const resolvers = {
                 if(context.user) {
                     const url = `https://trackapi.nutritionix.com/v2/natural/nutrients`;
                     const response = await fetch(url, {
-                        method: 'POST',
+                        method: "POST",
                         headers: {
-                            'x-app-id': '2c5cddf1',
-                            'x-app-key': 'df44732763fd77c6a376ce050adaa721',
-                            'x-remote-user-id': '0',
-                            'Content-Type': 'application/json'
+                            "x-app-id": "e606f177",
+                            "x-app-key": "cd709e0fbe0ce1eb752eff9c963777d1",
+                            "x-remote-user-id": "0",
+                            "Content-Type": "application/json"
                         },
-                        body: JSON.stringify({
-                            'query': query,
-                            'timezone': 'US/Eastern'
-                        })
+                        body: JSON.stringify(query)
                     });
                     const data = await response.json();
-                    return data.hits;
+                    return data;
                 }
             }
             catch (error) {

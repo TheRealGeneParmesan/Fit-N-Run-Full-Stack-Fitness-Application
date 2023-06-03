@@ -53,7 +53,11 @@ input StrengthInput {
 type Query {
   me: User
   donationSession: String
-  nutritionAPI(query: String!): [Nutrition]
+  nutritionAPI(query: String!): [Food]
+}
+
+type Food {
+  foods: [Nutrition]
 }
 
 type Nutrition {
