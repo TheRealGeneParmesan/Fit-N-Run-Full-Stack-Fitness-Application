@@ -2,6 +2,7 @@ const { Cardio, Strength, User } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth')
 const stripe = require('stripe')('sk_test_51NDIR4JJLHCDOShGXKl6t9qqixtopCzRRs9PvobEwWNtEfsHNKxCaPNF0L6R1rOUR7egj0KfXLENcCt8pkNQq5EN00a03JIq4r')
+const fetch = require('node-fetch');
 
 const resolvers = {
     Query: {
@@ -14,6 +15,33 @@ const resolvers = {
                 return user;
             }
             throw new AuthenticationError('You are not logged in (ㆆ _ ㆆ)');
+        },
+
+        nutritionAPI: async (parent, { query }, context) => {
+            try {
+                if (context.user) {
+                    const url = `https://trackapi.nutritionix.com/v2/natural/nutrients`;
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            "x-app-id": "2c5cddf1",
+                            "x-app-key": "b91c7832d47b05c118bc18725f8b7111",
+                        },
+                        body: JSON.stringify({
+                            "query": query,
+                            "timezone": "US/Eastern"
+                        })
+                    });
+                    const data = await response.json();
+                    console.log(data)
+                    return data.hits;
+                }
+
+            } catch (error) {
+                console.log(error)
+            }
+
         },
         donationSession: async (parent, args, context) => {
             const url = new URL(context.headers.referer).origin;

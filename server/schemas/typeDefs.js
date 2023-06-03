@@ -50,9 +50,14 @@ input StrengthInput {
   date: String
 }
 
+type Nutrition {
+  item_name: String
+}
+
 type Query {
   me: User
   donationSession: String
+  nutritionAPI(query: String!): [Nutrition]
 }
 
 type Mutation {

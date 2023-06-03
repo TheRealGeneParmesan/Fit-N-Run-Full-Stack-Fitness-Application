@@ -24,3 +24,11 @@ export const GET_ME = gql`
         }
     }
 `;
+
+export const GET_NUTRITION = gql`
+    query nutritionAPI($query: String!) {
+        nutritionAPI(query: $query) {
+            item_name
+        }
+    }
+`;
