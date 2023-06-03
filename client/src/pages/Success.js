@@ -1,5 +1,5 @@
 import '../index.css'
-import woody from '../images/woody.jpg';
+import woody from '../images/woody2.jpg';
 
 const Success = () => {
     return (

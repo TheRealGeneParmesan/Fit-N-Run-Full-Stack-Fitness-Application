@@ -4,8 +4,9 @@ import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 import backHistory from "../images/backHistory.png";
 import { REMOVE_CARDIO, REMOVE_STRENGTH } from "../utils/mutations";
-import { getCardioHistory, getStrengthHistory } from "../utils/localStorage";
 import { GET_ME } from "../utils/queries";
+import cardioIcon from "../images/cardio.png";
+import strengthIcon from "../images/strength.png";
 
 const History = () => {
   const [userData, setUserData] = useState({});
@@ -20,28 +21,16 @@ const History = () => {
   let currentDate;
 
   const { loading, data, error } = useQuery(GET_ME);
-  console.log(data)
 
   useEffect(() => {
     if (data) {
-      setUserData(data.me);
-      console.log("userData", data.me)
-      if (data.me.cardioHistory) {
-        setCardioHistory(data.me.cardioHistory);
-        console.log("cardioHistory", data.me.cardioHistory)
-      } else {
-        setCardioHistory([]);
-      }
-      if (data.me.strengthHistory) {
-        setStrengthHistory(data.me.strengthHistory);
-        console.log("strengthHistory", data.me.strengthHistory)
-      } else {
-        setStrengthHistory([]);
-      }
+      setCardioHistory(data.me.cardio);
+      setStrengthHistory(data.me.strength);
     }
   }, [data]);
 
-  const handleRemoveCardio = async (id) => {
+  const handleRemoveCardio = async (cardioId) => {
+    console.log(cardioId);
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -50,7 +39,7 @@ const History = () => {
 
     try {
       const { data } = await removeCardioHistory({
-        variables: { id },
+        variables: { cardioId },
       });
 
       if (!data) {
@@ -58,7 +47,7 @@ const History = () => {
       }
 
       const updatedCardioHistory = cardioHistory?.filter(
-        (cardio) => cardio.id !== id
+        (cardio) => cardio._id !== cardioId
       );
       setCardioHistory(updatedCardioHistory);
     } catch (err) {
@@ -66,7 +55,8 @@ const History = () => {
     }
   };
 
-  const handleRemoveStrength = async (id) => {
+  const handleRemoveStrength = async (strengthId) => {
+    console.log(strengthId)
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -75,7 +65,7 @@ const History = () => {
 
     try {
       const { data } = await removeStrengthHistory({
-        variables: { id },
+        variables: { strengthId },
       });
 
       if (!data) {
@@ -83,7 +73,7 @@ const History = () => {
       }
 
       const updatedStrengthHistory = strengthHistory?.filter(
-        (strength) => strength.id !== id
+        (strength) => strength._id !== strengthId
       );
       setStrengthHistory(updatedStrengthHistory);
     } catch (err) {
@@ -130,25 +120,23 @@ const History = () => {
                     if (currentDate !== formatDate(cardio.date)) {
                       currentDate = formatDate(cardio.date);
                       return (
-                        <div key={cardio.id}>
-                          <h6 className="cardioDate">{currentDate}</h6>
-                          <div className="cardioItem">
-                            <p className="cardioName">{cardio.name}</p>
-                            <p className="cardioDuration">{cardio.duration} minutes</p>
-                            <p className="cardioDistance">{cardio.distance} miles</p>
-                            <p className="cardioCalories">{cardio.calories} calories</p>
-                            <button className="cardioDelete" onClick={() => handleRemoveCardio(cardio.id)}>Delete</button>
+                        <div className="historyDiv d-flex" key={cardio.id}>
+                          <div className="date d-flex align-items-center">{currentDate}</div>
+                          <div className="historyItem history-card d-flex">
+                          <div className='d-flex align-items-center'><img alt="cardio" src={cardioIcon} className="historyIcon" /></div>
+                            <p className="historyName">{cardio.name}</p>
+                            <p className="historyIndex">{cardio.distance} miles</p>
+                            <button className="historyDelete btn btn-danger" onClick={() => handleRemoveCardio(cardio._id)}>X</button>
                           </div>
                         </div>
                       );
                     } else {
                       return (
-                        <div className="cardioItem" key={cardio.id}>
-                          <p className="cardioName">{cardio.name}</p>
-                          <p className="cardioDuration">{cardio.duration} minutes</p>
-                          <p className="cardioDistance">{cardio.distance} miles</p>
-                          <p className="cardioCalories">{cardio.calories} calories</p>
-                          <button className="cardioDelete" onClick={() => handleRemoveCardio(cardio.id)}>Delete</button>
+                        <div className="historyItem" key={cardio.id}>
+                          <div className="date d-flex align-items-center">{currentDate}</div>
+                          <p className="historyName">{cardio.name}</p>
+                          <p className="historyIndex">{cardio.distance} miles</p>
+                          <button className="historyDelete btn btn-danger" onClick={() => handleRemoveCardio(cardio._id)}>X</button>
                         </div>
                       );
                     }
@@ -156,7 +144,7 @@ const History = () => {
                 </div>
               ) : (
                 <div>
-                  <h6 className="cardioDate">Get started!</h6>
+                  <h6 className="historyDate">Get started!</h6>
                 </div>
               )}
               {cardioHistory?.length > 6 && cardioHistory?.length > displayCardio ? (
@@ -173,25 +161,22 @@ const History = () => {
                     if (currentDate !== formatDate(strength.date)) {
                       currentDate = formatDate(strength.date);
                       return (
-                        <div key={strength.id}>
-                          <h6 className="strengthDate">{currentDate}</h6>
-                          <div className="strengthItem">
-                            <p className="strengthName">{strength.name}</p>
-                            <p className="strengthSets">{strength.sets} sets</p>
-                            <p className="strengthReps">{strength.reps} reps</p>
-                            <p className="strengthWeight">{strength.weight} lbs</p>
-                            <button className="strengthDelete" onClick={() => handleRemoveStrength(strength.id)}>Delete</button>
+                        <div className="historyDiv d-flex" key={strength.id}>
+                          <div className="date d-flex align-items-center">{currentDate}</div>
+                          <div className="historyItem history-card d-flex">
+                          <div className='d-flex align-items-center'><img alt="cardio" src={strengthIcon} className="historyIcon" /></div>
+                            <p className="historyName">{strength.name}</p>
+                            <p className="historyIndex">{strength.weight} lbs</p>
+                            <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>
                           </div>
                         </div>
                       );
                     } else {
                       return (
-                        <div className="strengthItem" key={strength.id}>
-                          <p className="strengthName">{strength.name}</p>
-                          <p className="strengthSets">{strength.sets} sets</p>
-                          <p className="strengthReps">{strength.reps} reps</p>
-                          <p className="strengthWeight">{strength.weight} lbs</p>
-                          <button className="strengthDelete" onClick={() => handleRemoveStrength(strength.id)}>Delete</button>
+                        <div className="historyItem" key={strength.id}>
+                          <p className="historyName">{strength.name}</p>
+                          <p className="historyIndex">{strength.weight} lbs</p>
+                          <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>
                         </div>
                       );
                     }
@@ -199,7 +184,7 @@ const History = () => {
                 </div>
               ) : (
                 <div>
-                  <h6 className="strengthDate">Get started!</h6>
+                  <h6 className="historyDate">Get started!</h6>
                 </div>
               )}
               {strengthHistory?.length > 6 && strengthHistory?.length > displayStrength ? (

@@ -79,8 +79,8 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   saveCardio(input: CardioInput): Cardio
   saveStrength(input: StrengthInput): Strength
-  removeCardio(cardioId: ID!): User
-  removeStrength(strengthId: ID!): User
+  removeCardio(cardioId: ID!): Cardio
+  removeStrength(strengthId: ID!): Strength
 }
 
 `;
