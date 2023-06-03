@@ -19,8 +19,7 @@ const History = () => {
 
   const loggedIn = Auth.loggedIn();
   let currentDate;
-
-  const { loading, data, error } = useQuery(GET_ME);
+  const { loading, data, error } = useQuery(GET_ME, { fetchPolicy: "no-cache" });
 
   useEffect(() => {
     if (data) {
@@ -120,10 +119,10 @@ const History = () => {
                     if (currentDate !== formatDate(cardio.date)) {
                       currentDate = formatDate(cardio.date);
                       return (
-                        <div className="historyDiv d-flex" key={cardio.id}>
+                        <div className="historyDiv d-flex" key={cardio._id}>
                           <div className="date d-flex align-items-center">{currentDate}</div>
                           <div className="historyItem history-card d-flex">
-                          <div className='d-flex align-items-center'><img alt="cardio" src={cardioIcon} className="historyIcon" /></div>
+                            <div className='d-flex align-items-center'><img alt="cardio" src={cardioIcon} className="historyIcon" /></div>
                             <p className="historyName">{cardio.name}</p>
                             <p className="historyIndex">{cardio.distance} miles</p>
                             <button className="historyDelete btn btn-danger" onClick={() => handleRemoveCardio(cardio._id)}>X</button>
@@ -132,7 +131,7 @@ const History = () => {
                       );
                     } else {
                       return (
-                        <div className="historyItem" key={cardio.id}>
+                        <div className="historyItem" key={cardio._id}>
                           <div className="date d-flex align-items-center">{currentDate}</div>
                           <p className="historyName">{cardio.name}</p>
                           <p className="historyIndex">{cardio.distance} miles</p>
@@ -161,10 +160,10 @@ const History = () => {
                     if (currentDate !== formatDate(strength.date)) {
                       currentDate = formatDate(strength.date);
                       return (
-                        <div className="historyDiv d-flex" key={strength.id}>
+                        <div className="historyDiv d-flex" key={strength._id}>
                           <div className="date d-flex align-items-center">{currentDate}</div>
                           <div className="historyItem history-card d-flex">
-                          <div className='d-flex align-items-center'><img alt="cardio" src={strengthIcon} className="historyIcon" /></div>
+                            <div className='d-flex align-items-center'><img alt="cardio" src={strengthIcon} className="historyIcon" /></div>
                             <p className="historyName">{strength.name}</p>
                             <p className="historyIndex">{strength.weight} lbs</p>
                             <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>
@@ -173,7 +172,7 @@ const History = () => {
                       );
                     } else {
                       return (
-                        <div className="historyItem" key={strength.id}>
+                        <div className="historyItem" key={strength._id}>
                           <p className="historyName">{strength.name}</p>
                           <p className="historyIndex">{strength.weight} lbs</p>
                           <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>

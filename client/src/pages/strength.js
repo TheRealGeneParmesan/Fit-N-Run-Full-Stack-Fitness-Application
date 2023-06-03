@@ -17,15 +17,15 @@ const Strength = () => {
     };
 
     const handleRepsChange = (e) => {
-        setReps(e.target.value);
+        setReps(parseInt(e.target.value));
     };
 
     const handleSetsChange = (e) => {
-        setSets(e.target.value);
+        setSets(parseInt(e.target.value));
     };
 
     const handleWeightChange = (e) => {
-        setWeight(e.target.value);
+        setWeight(parseInt(e.target.value));
     };
 
     const handleDateChange = (e) => {

@@ -80,7 +80,7 @@ const Timer = () => {
         <div className="timer-container">
             <h1 className="timer-title"> Timer </h1>
             <div className="clock-face">
-                <span className="clock-time">{time.hours.toString().padStart(2, '0')}:{time.minutes.toString().padStart(2, '0')}</span>
+                <span className="clock-time">{time.hours.toString().padStart(2, '0')}:{time.minutes.toString().padStart(2, '0')}:{time.seconds.toString().padStart(2, '0')}</span>
             </div>
             <div className="time-controls">
                 <div className="time-unit">
@@ -98,6 +98,15 @@ const Timer = () => {
                     </button>
                     <span className="time">Minutes</span>
                     <button className="time-button" onClick={() => decreaseTime('minutes')}>
+                        <span>&#x25BC;</span>
+                    </button>
+                </div>
+                <div className="time-unit">
+                    <button className="time-button" onClick={() => increaseTime('seconds')}>
+                        <span>&#x25B2;</span>
+                    </button>
+                    <span className="time">Seconds</span>
+                    <button className="time-button" onClick={() => decreaseTime('seconds')}>
                         <span>&#x25BC;</span>
                     </button>
                 </div>
