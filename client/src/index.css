@@ -208,6 +208,10 @@ code {
 
 .loginBtn {
   background-color: turquoise;
+  color: black;
+  font-family: 'Oswald';
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .loginPage {
@@ -265,10 +269,11 @@ code {
 }
 
 .loginHeader {
-  font-size: 2rem;
+  font-size: 2.5rem;
   align-self: center;
   font-family: 'Oswald';
   color: turquoise;
+  text-shadow: black 1px 0 10px;
 }
 
 .signupBtn {
