@@ -124,6 +124,7 @@ const History = () => {
                         <div>
                           <p className="historyName">{cardio.name}</p>
                           <p className="historyIndex">{cardio.distance} miles</p>
+                          <p className="historyIndex">{cardio.duration} minutes</p>
                           <button className="historyDelete btn btn-danger" onClick={() => handleRemoveCardio(cardio._id)}>X</button>
                         </div>
                       </div>
@@ -153,6 +154,8 @@ const History = () => {
                         <div className='d-flex align-items-center'><img alt="strength" src={strengthIcon} className="historyIcon" /></div>
                         <div>
                           <p className="historyName">{strength.name}</p>
+                          <p className="historyIndex">{strength.sets} sets</p>
+                          <p className="historyIndex">{strength.reps} reps</p>
                           <p className="historyIndex">{strength.weight} lbs</p>
                           <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>
                         </div>
