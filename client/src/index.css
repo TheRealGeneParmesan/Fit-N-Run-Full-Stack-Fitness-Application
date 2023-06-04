@@ -377,6 +377,13 @@ code {
   align-items: center;
 }
 
+
+
+.strengthIcon {
+  font-size: 2rem;
+  color: turquoise;
+}
+
 .strengthContainer {
     height: 100vh;
     display: flex;
@@ -410,6 +417,7 @@ code {
     background-color:rgba(0, 0, 0, 0.4);
     font-size: 1.4rem;
   }
+  
 
   .form-group label {
     font-size: 1.4rem;
@@ -633,11 +641,16 @@ code {
   }
 
 .stopwatch-container::-webkit-scrollbar-track {
-  background-color: transparent;
+  background: transparent;
   }
 
 .stopwatch-container::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+  }
+
+  .stopwatch-container:-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .stopwatch {
@@ -766,18 +779,6 @@ code {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .workoutHistory {
   display: flex;
   justify-content: space-evenly;
@@ -841,10 +842,10 @@ code {
 }
 
 .cardioIcon {
-  height: 2rem;
   margin-right: 0.5rem;
   width: auto;
-
+  font-size: 2rem;
+  color: turquoise;
 }
 
 .historyHeader {
@@ -879,9 +880,26 @@ code {
   font-family: 'Oswald';
 }
 
+@media screen and (max-width: 1600px) {
+  .historyContainer {
+    width:80%;
+  }  
+
+}
+
 @media screen and (max-width: 1300px) {
   .historyContainer {
     width:80%;
+  }  
+
+
+  
+}
+
+
+@media screen and (max-width: 1030px) {
+  .historyContainer {
+    width: 100%;
   }  
 
 }
@@ -900,7 +918,7 @@ code {
 
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
   .workoutHistory {
     width: 100%;
     display: flex;
@@ -934,4 +952,150 @@ code {
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+.exerciseBg {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.exerciseHeader {
+  font-size: 3.5rem;
+  font-weight: bold;
+  align-self: center;
+  color: white;
+  text-shadow: turquoise 0 0 5px;
+  font-family: 'Oswald';
+}
+
+.loadingExercise {
+  border-radius: 8px;
+  height: 15rem;
+  width: 17rem;
+  margin-top: .5rem;
+}
+
+.exerciseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  overflow: auto;
+  align-self: center;
+  text-align: center;
+  font-family: 'Oswald';
+}
+
+.exercise-btn {
+  background-color: black;
+  color: turquoise;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  margin-left: .1rem;
+  font-family: 'Oswald';
+}
+
+.exercise-btn:hover {
+  background-color: white;
+  color: turquoise;
+  border-style: none;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+}
+
+.exercise-input {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+}
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2rem;
+  height: 400px; 
+  overflow-y: auto;
+}
+
+.exerciseList::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.exerciseList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.exerciseList::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+}
+
+.exerciseList::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.exercise-card {
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 8px;
+  width: 50%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.exercise-title {
+  font-weight: bold;
+  color: black;
+  font-size: 2.5rem;
+  text-shadow: turquoise 0 0 5px;
+}
+
+.exercise-type {
+  color: white;
+  text-shadow: black 0 0 5px;
+  font-size: 1.5rem;
+}
+
+.exercise-muscle {
+  color: white;
+  text-shadow: black 0 0 5px;
+  font-size: 1.5rem;
+}
+
+.exercise-equip{
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: black 0 0 5px;
+}
+
+.exercise-diff {
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: black 0 0 5px;
+}
+
+.exercise-instructions {
+  margin-top: 1rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size: 1.3rem;
+
+  word-break: break-word;
 }
