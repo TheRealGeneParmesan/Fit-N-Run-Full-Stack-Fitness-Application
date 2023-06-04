@@ -6,7 +6,7 @@ import backHistory from "../images/backHistory.png";
 import { REMOVE_CARDIO, REMOVE_STRENGTH } from "../utils/mutations";
 import { GET_ME } from "../utils/queries";
 import { GiRunningNinja } from "react-icons/gi";
-import strengthIcon from "../images/strength.png";
+import { GiWeightLiftingUp } from "react-icons/gi";
 
 const History = () => {
   const [userData, setUserData] = useState({});
@@ -151,7 +151,7 @@ const History = () => {
                     return (
                       <div className="historyItem history-card d-flex" key={strength._id}>
                         <div className="date d-flex align-items-center">{currentDate}</div>
-                        <div className='d-flex align-items-center'><img alt="strength" src={strengthIcon} className="historyIcon" /></div>
+                        <div className="strengthIcon"> <GiWeightLiftingUp /> </div>
                         <div>
                           <p className="historyName">{strength.name}</p>
                           <p className="historyIndex">{strength.sets} sets</p>
