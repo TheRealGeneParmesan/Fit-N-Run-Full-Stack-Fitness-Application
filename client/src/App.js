@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Strength from "./pages/Strength";
-import ExerciseList from "./pages/Nutrition";
+import ExerciseList from "./pages/Excercises";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
 import Login from "./pages/LoginForm";
@@ -65,7 +65,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/stopwatch" element={<Stopwatch />} />
-            <Route path="/nutrition" element={<ExerciseList />} />
+            <Route path="/exercises" element={<ExerciseList />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
