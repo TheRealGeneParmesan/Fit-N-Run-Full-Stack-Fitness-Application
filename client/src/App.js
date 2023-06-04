@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Nutrition from "./pages/Nutrition";
 import Strength from "./pages/Strength";
+import Nutrition from "./pages/Nutrition";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
 import Login from "./pages/LoginForm";

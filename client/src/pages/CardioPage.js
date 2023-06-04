@@ -17,11 +17,11 @@ const Cardio = () => {
     };
 
     const handleCardioDurationChange = (e) => {
-        setCardioDuration(e.target.value);
+        setCardioDuration(parseInt(e.target.value));
     };
 
     const handleCardioDistanceChange = (e) => {
-        setCardioDistance(e.target.value);
+        setCardioDistance(parseInt(e.target.value));
     };
 
     const handleDateChange = (e) => {
@@ -61,7 +61,7 @@ const Cardio = () => {
                         </div>
                         <div className="form-group">
                             <label>Duration (Minutes):</label>
-                            <input type="number" className="form-control" placeholder="2 Hours" value={cardioDuration} onChange={handleCardioDurationChange} />
+                            <input type="number" className="form-control" placeholder="30" value={cardioDuration} onChange={handleCardioDurationChange} />
                         </div>
                         <div className="form-group">
                             <label>Distance (Miles):</label>

@@ -5,7 +5,7 @@ import Auth from "../utils/auth";
 import backHistory from "../images/backHistory.png";
 import { REMOVE_CARDIO, REMOVE_STRENGTH } from "../utils/mutations";
 import { GET_ME } from "../utils/queries";
-import cardioIcon from "../images/cardio.png";
+import { GiRunningNinja } from "react-icons/gi";
 import strengthIcon from "../images/strength.png";
 import loadingImage from "../images/loading.gif";
 
@@ -19,8 +19,7 @@ const History = () => {
 
   const loggedIn = Auth.loggedIn();
   let currentDate;
-
-  const { loading, data, error } = useQuery(GET_ME);
+  const { loading, data, error } = useQuery(GET_ME, { fetchPolicy: "no-cache" });
 
   useEffect(() => {
     if (data) {
@@ -119,30 +118,20 @@ const History = () => {
               <h5 className="cardioHeader">Cardio</h5>
               {cardioHistory?.length ? (
                 <div className="cardioList">
-                  {cardioHistory.slice(0, displayCardio).map((cardio) => {
-                    if (currentDate !== formatDate(cardio.date)) {
-                      currentDate = formatDate(cardio.date);
-                      return (
-                        <div className="historyDiv d-flex" key={cardio.id}>
-                          <div className="date d-flex align-items-center">{currentDate}</div>
-                          <div className="historyItem history-card d-flex">
-                          <div className='d-flex align-items-center'><img alt="cardio" src={cardioIcon} className="historyIcon" /></div>
-                            <p className="historyName">{cardio.name}</p>
-                            <p className="historyIndex">{cardio.distance} miles</p>
-                            <button className="historyDelete btn btn-danger" onClick={() => handleRemoveCardio(cardio._id)}>X</button>
-                          </div>
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div className="historyItem" key={cardio.id}>
-                          <div className="date d-flex align-items-center">{currentDate}</div>
+                  {cardioHistory.slice(0, displayCardio).map((cardio, index) => {
+                    const currentDate = formatDate(cardio.date);
+                    return (
+                      <div className="historyItem history-card d-flex" key={cardio._id}>
+                        <div className="date d-flex align-items-center">{currentDate}</div>
+                        <div className="cardioIcon"> <GiRunningNinja /> </div>
+                        <div>
                           <p className="historyName">{cardio.name}</p>
                           <p className="historyIndex">{cardio.distance} miles</p>
+                          <p className="historyIndex">{cardio.duration} minutes</p>
                           <button className="historyDelete btn btn-danger" onClick={() => handleRemoveCardio(cardio._id)}>X</button>
                         </div>
-                      );
-                    }
+                      </div>
+                    );
                   })}
                 </div>
               ) : (
@@ -160,29 +149,21 @@ const History = () => {
               <h5 className="strengthHeader">Strength</h5>
               {strengthHistory?.length ? (
                 <div className="strengthList">
-                  {strengthHistory.slice(0, displayStrength).map((strength) => {
-                    if (currentDate !== formatDate(strength.date)) {
-                      currentDate = formatDate(strength.date);
-                      return (
-                        <div className="historyDiv d-flex" key={strength.id}>
-                          <div className="date d-flex align-items-center">{currentDate}</div>
-                          <div className="historyItem history-card d-flex">
-                          <div className='d-flex align-items-center'><img alt="cardio" src={strengthIcon} className="historyIcon" /></div>
-                            <p className="historyName">{strength.name}</p>
-                            <p className="historyIndex">{strength.weight} lbs</p>
-                            <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>
-                          </div>
-                        </div>
-                      );
-                    } else {
-                      return (
-                        <div className="historyItem" key={strength.id}>
+                  {strengthHistory.slice(0, displayStrength).map((strength, index) => {
+                    const currentDate = formatDate(strength.date);
+                    return (
+                      <div className="historyItem history-card d-flex" key={strength._id}>
+                        <div className="date d-flex align-items-center">{currentDate}</div>
+                        <div className='d-flex align-items-center'><img alt="strength" src={strengthIcon} className="historyIcon" /></div>
+                        <div>
                           <p className="historyName">{strength.name}</p>
+                          <p className="historyIndex">{strength.sets} sets</p>
+                          <p className="historyIndex">{strength.reps} reps</p>
                           <p className="historyIndex">{strength.weight} lbs</p>
                           <button className="historyDelete btn btn-danger" onClick={() => handleRemoveStrength(strength._id)}>X</button>
                         </div>
-                      );
-                    }
+                      </div>
+                    );
                   })}
                 </div>
               ) : (
@@ -202,5 +183,4 @@ const History = () => {
     </main>
   );
 };
-
 export default History;
