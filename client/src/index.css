@@ -377,6 +377,8 @@ code {
   align-items: center;
 }
 
+
+
 .strengthIcon {
   font-size: 2rem;
   color: turquoise;
@@ -772,18 +774,6 @@ code {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .workoutHistory {
   display: flex;
   justify-content: space-evenly;
@@ -957,4 +947,73 @@ code {
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
+}
+
+.exerciseBg {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.exerciseHeader {
+  font-size: 3.5rem;
+  font-weight: bold;
+  align-self: center;
+  color: white;
+  text-shadow: turquoise 0 0 5px;
+  font-family: 'Oswald';
+}
+
+.loadingExercise {
+  border-radius: 8px;
+  height: 15rem;
+  width: 17rem;
+  margin-top: .5rem;
+}
+
+.exerciseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  overflow: auto;
+  align-self: center;
+  text-align: center;
+  font-family: 'Oswald';
+}
+
+.exercise-btn {
+  background-color: black;
+  color: turquoise;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+}
+
+.exercise-btn:hover {
+  background-color: white;
+  color: turquoise;
+  border-style: none;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+}
+
+.exercise-input {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border-style: none;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
 }
