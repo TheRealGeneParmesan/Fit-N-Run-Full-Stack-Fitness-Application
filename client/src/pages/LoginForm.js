@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import backLogin from "../images/backLogin.png";
+import gym from "../images/gym.jpg";
 
 import Auth from "../utils/auth";
 
@@ -31,7 +31,7 @@ const Login = () => {
   };
 
   return (
-    <main className="loginPage" style={{ backgroundImage: `url(${backLogin})` }}>
+    <main className="loginPage" style={{ backgroundImage: `url(${gym})` }}>
       <div className="col-12 col-lg-10">
         <div className="loginContainer card">
           <h4 className="loginHeader card-header">Login</h4>
