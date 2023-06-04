@@ -57,7 +57,7 @@ const Cardio = () => {
                     <form onSubmit={handleCardioSubmit}>
                         <div className="form-group">
                             <label>Activity:</label>
-                            <input type="text" className="form-control" placeholder="Marathon Running" value={cardio} onChange={handleCardioChange} />
+                            <input type="text" className="form-control" placeholder="Hiking" value={cardio} onChange={handleCardioChange} />
                         </div>
                         <div className="form-group">
                             <label>Duration (Minutes):</label>

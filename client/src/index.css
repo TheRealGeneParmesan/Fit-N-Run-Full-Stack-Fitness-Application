@@ -351,6 +351,11 @@ code {
   align-items: center;
 }
 
+.strengthIcon {
+  font-size: 2rem;
+  color: turquoise;
+}
+
 .strengthContainer {
     height: 100vh;
     display: flex;
@@ -384,6 +389,7 @@ code {
     background-color:rgba(0, 0, 0, 0.4);
     font-size: 1.4rem;
   }
+  
 
   .form-group label {
     font-size: 1.4rem;
@@ -821,10 +827,10 @@ code {
 }
 
 .cardioIcon {
-  height: 2rem;
   margin-right: 0.5rem;
   width: auto;
-
+  font-size: 2rem;
+  color: turquoise;
 }
 
 
@@ -846,9 +852,26 @@ code {
   font-family: 'Oswald';
 }
 
+@media screen and (max-width: 1600px) {
+  .historyContainer {
+    width:80%;
+  }  
+
+}
+
 @media screen and (max-width: 1300px) {
   .historyContainer {
     width:80%;
+  }  
+
+
+  
+}
+
+
+@media screen and (max-width: 1030px) {
+  .historyContainer {
+    width: 100%;
   }  
 
 }
@@ -867,7 +890,7 @@ code {
 
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
   .workoutHistory {
     width: 100%;
     display: flex;
