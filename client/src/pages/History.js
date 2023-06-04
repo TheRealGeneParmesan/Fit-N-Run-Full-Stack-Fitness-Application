@@ -7,9 +7,9 @@ import { REMOVE_CARDIO, REMOVE_STRENGTH } from "../utils/mutations";
 import { GET_ME } from "../utils/queries";
 import { GiRunningNinja } from "react-icons/gi";
 import strengthIcon from "../images/strength.png";
+import loadingImage from "../images/loading.gif";
 
 const History = () => {
-  const [userData, setUserData] = useState({});
   const [cardioHistory, setCardioHistory] = useState([]);
   const [strengthHistory, setStrengthHistory] = useState([]);
   const [displayCardio, setDisplayCardio] = useState(6);
@@ -93,7 +93,10 @@ const History = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loadingDiv">
+      <p className="loadingCaption">Almost done!</p>
+      <img src={loadingImage} alt="anime squat" className="loadingImage" />
+    </div>;
   }
 
   const formatDate = (date) => {

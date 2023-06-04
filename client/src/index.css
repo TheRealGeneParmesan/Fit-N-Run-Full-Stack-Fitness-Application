@@ -248,7 +248,6 @@ code {
   height: 200px;
 }
 
-
 .signupPage {
   height: 100vh;
   display: flex;
@@ -259,6 +258,33 @@ code {
   background-position: center;
 }
 
+.historyContainer {
+  margin: auto;
+  width: 80%;
+  margin-bottom: 15rem;
+  background-color:rgba(0, 0, 0, 0.4);
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
+}
+
+.historyHeader {
+  font-size: 3rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+.workoutHistory {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.cardioHeader, .strengthHeader {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+}
 
 
 .signupHeader {
@@ -518,29 +544,27 @@ code {
     border-style: none;
   }
 
-  .successDonation {
+  .successHeader {
     font-family: 'Cherry Bomb One';
     font-size: 2rem;
     color: #ecb2f3;
     text-shadow: black .5px 0 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 
   .successDonation {
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;  
   }
 
-  .woody {
-    border-style: none;
-    border-radius: 100px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .krabsImage {
+    height: 50rem;
+    width: 25rem;
+    padding-bottom: 25rem;
   }
 
   .cancelTitle {
@@ -548,26 +572,22 @@ code {
     color: #ecb2f3;
     text-shadow: black 0 0 6px;
     background-color: #bbcdda;
-    font-size: 5rem;
-    max-width: 650px;
+    font-size: 2rem;
+    margin: 1rem;
+    text-align: center;
   }
 
   .cancelDonation {
     display: flex;
-    justify-content: space-evenly;
-  }
-
-  .cryImg {
-    border-style: none;
-    display: flex;
-    height: 600px;
-    width: 600px;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
   }
 
   .will {
-    height: 600px;
-    width: 600px;
-    margin-right: 10px;
+    height: 45rem;
+    width: 25rem;
+    padding-bottom: 20rem;
   }
 
   @media (max-width: 768px) {
@@ -827,11 +847,24 @@ code {
 
 }
 
-
 .historyHeader {
   font-size: 3rem;
   font-weight: bold;
   align-self: center;
+}
+
+.historyIndex {
+  margin: 0 auto;
+  align-self: center;
+}
+
+.loadingDiv {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10rem;
 }
 
 .historyContainer {
@@ -876,12 +909,6 @@ code {
   }
 }
 
-
-
-
-
-
-
 .historyPage {
   height: 100vh;
   display: flex;
@@ -890,16 +917,21 @@ code {
   align-items: center;
   background-size: cover;
   background-position: center;
+  }
+
+.loadingImage {
+  height: 25rem;
+  width: 25rem;
+  margin: 0 auto;
+  display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.loadingCaption {
+  font-family: 'Cherry Bomb One';
+  color: #ecb2f3;
+  text-shadow: black 0 0 6px;
+  background-color: #bbcdda;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}
