@@ -208,6 +208,10 @@ code {
 
 .loginBtn {
   background-color: turquoise;
+  color: black;
+  font-family: 'Oswald';
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .loginPage {
@@ -255,43 +259,7 @@ code {
   background-position: center;
 }
 
-.historyPage {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-}
 
-.historyContainer {
-  margin: auto;
-  width: 50%;
-  margin-bottom: 15rem;
-  background-color:rgba(0, 0, 0, 0.4);
-  color: turquoise;
-  text-shadow: black 1px 0 10px;
-  font-family: 'Oswald';
-}
-
-.historyHeader {
-  font-size: 3rem;
-  font-weight: bold;
-  align-self: center;
-}
-
-.workoutHistory {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.cardioHeader, .strengthHeader {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: inline-block;
-}
 
 .signupHeader {
   font-size: 2rem;
@@ -301,10 +269,11 @@ code {
 }
 
 .loginHeader {
-  font-size: 2rem;
+  font-size: 2.5rem;
   align-self: center;
   font-family: 'Oswald';
   color: turquoise;
+  text-shadow: black 1px 0 10px;
 }
 
 .signupBtn {
@@ -776,43 +745,161 @@ code {
   cursor: grab;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+.workoutHistory {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.cardioList,
+.strengthList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  .historyItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 140%;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+    background-color: black;
+    opacity: 0.85;
+    border-radius: 8px;
+    color: white;
+  }
+
+  .historyItem .date {
+    display: flex;
+    align-items: center;
+  }
+  
+  .historyItem .historyIcon,
+  .historyItem .historyInfo {
+    margin-right: 10px;
+  }
+  
+
+  .historyName {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  
+  
+  .historyDelete {
+    margin-left: auto;
+  }
+  
+  
+
+.cardioHeader, .strengthHeader {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
 .historyIcon {
   height: 1rem;
-  margin-right: .5rem;
-  margin-left: .5rem;
 }
 
-.historyDiv {
-  margin-bottom: .5rem;
+.cardioIcon {
+  height: 2rem;
+  margin-right: 0.5rem;
+  width: auto;
+
 }
 
-.date {
-  min-width: 70px;
-  margin-right: 16px;
+
+.historyHeader {
+  font-size: 3rem;
   font-weight: bold;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  color: white;
-}
-
-.historyItem {
-  width: 15rem;
-  background-color: grey;
-  opacity: 85%;
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: white;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
-.historyName {
-  font-weight: bold;
-  margin: 0 auto;
-  font-size: 1.2rem;
   align-self: center;
 }
 
-.historyIndex {
-  margin: 0 auto;
-  align-self: center;
+.historyContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 15rem;
+  background-color:rgba(0, 0, 0, 0.4);
+  color: turquoise;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Oswald';
 }
+
+@media screen and (max-width: 1300px) {
+  .historyContainer {
+    width:80%;
+  }  
+
+}
+
+@media screen and (max-width: 800px) {
+  .historyContainer {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width:680px) {
+  .historyContainer {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width: 550px) {
+  .workoutHistory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+.historyPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
