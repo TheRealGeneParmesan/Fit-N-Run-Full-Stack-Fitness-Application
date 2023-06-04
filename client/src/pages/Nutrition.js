@@ -1,58 +1,59 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
-import { GET_NUTRITION } from '../utils/queries';
+import { GET_EXERCISES } from '../utils/queries';
 
-const Nutrition = () => {
-    const [nutrition, setNutrition] = useState('');
-    const [getNutrition, { loading, data }] = useLazyQuery(GET_NUTRITION);
+const ExerciseList = () => {
+    const [muscle, setMuscle] = useState('');
+    const [searchExercises, { loading, error, data }] = useLazyQuery(GET_EXERCISES, {
+        variables: { muscle },
+    });
 
-    const searchNutrition = () => {
-        getNutrition({ variables: { query: nutrition } });
+    const handleInputChange = (e) => {
+        setMuscle(e.target.value);
     };
 
-    const results = data?.nutritionAPI || [];
-    console.log(results)
+    const handleSearch = () => {
+        searchExercises();
+    };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
+
+    const exercises = data?.getExercises || [];
 
     return (
         <div>
-            <h1>Nutrition</h1>
-            <input
-                type="text"
-                value={nutrition}
-                onChange={(e) => setNutrition(e.target.value)}
-            />
-
-            <button onClick={searchNutrition}>Search</button>
-
-            {loading ? (
-                <p>Loading...</p>
+            <h1>Recommended Exercises</h1>
+            <div>
+                <input
+                    type="text"
+                    placeholder="Enter a muscle group"
+                    value={muscle}
+                    onChange={handleInputChange}
+                />
+                <button onClick={handleSearch}>Search</button>
+            </div>
+            {exercises.length > 0 ? (
+                exercises.map((exercise) => (
+                    <div key={exercise.name}>
+                        <h3>{exercise.name}</h3>
+                        <p>Type: {exercise.type}</p>
+                        <p>Muscle: {exercise.muscle}</p>
+                        <p>Equipment: {exercise.equipment}</p>
+                        <p>Difficulty: {exercise.difficulty}</p>
+                        <p>Instructions: {exercise.instructions}</p>
+                    </div>
+                ))
             ) : (
-                <ul>
-                    {results.map((food, index) => {
-                        console.log(food); // Log each food item
-                        return (
-                            <li key={index}>
-                                <h3>{food.food_name}</h3>
-                                <p>Serving Quantity: {food.serving_qty}</p>
-                                <p>Serving Unit: {food.serving_unit}</p>
-                                <p>Serving Weight (grams): {food.serving_weight_grams}</p>
-                                <p>Calories: {food.nf_calories}</p>
-                                <p>Total Fat: {food.nf_total_fat}</p>
-                                <p>Saturated Fat: {food.nf_saturated_fat}</p>
-                                <p>Cholesterol: {food.nf_cholesterol}</p>
-                                <p>Sodium: {food.nf_sodium}</p>
-                                <p>Total Carbohydrate: {food.nf_total_carbohydrate}</p>
-                                <p>Dietary Fiber: {food.nf_dietary_fiber}</p>
-                                <p>Sugars: {food.nf_sugars}</p>
-                                <p>Protein: {food.nf_protein}</p>
-                                <p>Potassium: {food.nf_potassium}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <p>Pump, Pump, Pump it Up!</p>
             )}
         </div>
     );
 };
 
-export default Nutrition;
+export default ExerciseList;

@@ -25,10 +25,16 @@ export const GET_ME = gql`
     }
 `;
 
-export const GET_NUTRITION = gql`
-    query nutritionAPI($query: String!) {
-        nutritionAPI(query: $query) {
-            item_name
-        }
+
+export const GET_EXERCISES = gql`
+  query exercisesByMuscle($muscle: String!) {
+    getExercises(muscle: $muscle) {
+      name
+      type
+      muscle
+      equipment
+      difficulty
+      instructions
     }
+  }
 `;
