@@ -42,23 +42,27 @@ const ExerciseList = () => {
                         />
                         <button className="exercise-btn" onClick={handleSearch}>Search</button>
                     </div>
-                    {exercises.length > 0 ? (
-                        exercises.map((exercise) => (
-                            <div key={exercise.name}>
-                                <h3>{exercise.name}</h3>
-                                <p>Type: {exercise.type}</p>
-                                <p>Muscle: {exercise.muscle}</p>
-                                <p>Equipment: {exercise.equipment}</p>
-                                <p>Difficulty: {exercise.difficulty}</p>
-                                <p>Instructions: {exercise.instructions}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <img src={loadingImage} alt="anime squat" className="loadingExercise" />
-                    )}
+                    <div className="exerciseList">
+                        {exercises.length > 0 ? (
+                            exercises.slice(0, 8).map((exercise) => (
+                                <div className="exercise-card" key={exercise.name}>
+                                    <h3 className="exercise-title">{exercise.name}</h3>
+                                    <p className="exercise-type">Type: {exercise.type}</p>
+                                    <p className="exercise-muscle">Muscle: {exercise.muscle}</p>
+                                    <p className="exercise-equip">Equipment: {exercise.equipment}</p>
+                                    <p className="exercise-diff">Difficulty: {exercise.difficulty}</p>
+                                    <p className="exercise-instructions">Instructions: {exercise.instructions}</p>
+                                </div>
+
+                            ))
+                        ) : (
+                            <img src={loadingImage} alt="anime squat" className="loadingExercise" />
+                        )}
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
