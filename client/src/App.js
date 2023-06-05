@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Strength from "./pages/StrengthPage";
 import ExerciseList from "./pages/Excercises";
-import Profile from "./pages/Profile";
+import Profile from "./pages/ProfilePage";
 import Navbar from "./components/Navbar";
 import Login from "./pages/LoginForm";
 import Signup from "./pages/SignupForm";
