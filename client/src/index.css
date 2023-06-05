@@ -299,6 +299,8 @@ code {
   font-weight: bold;
 }
 
+
+
 @media screen and (max-width: 1300px) {
   .signupContainer, .loginContainer {
     width:40%;
@@ -346,8 +348,15 @@ code {
 
 @media screen and (max-width: 768px) {
   .card a, .card-link {
-    font-size: 20px;
+    font-size: 30px;
     line-height: 1.1;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card a, .card-link {
+    font-size: 26px;
+    line-height: 1;
   }
 }
 
@@ -355,6 +364,23 @@ code {
   .card a, .card-link {
     font-size: 20px;
     line-height: 1;
+  }
+  
+}
+
+@media screen and (max-width: 350px) {
+  .cardContainer {
+    display: block;
+  }
+
+  .card a, .card-link {
+    font-size: 32px;
+    line-height: 1;
+  }
+  
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -545,25 +571,26 @@ code {
 
   .successHeader {
     font-family: 'Cherry Bomb One';
-    font-size: 2rem;
+    font-size: 4rem;
     color: #ecb2f3;
     text-shadow: black .5px 0 6px;
-    margin: 1rem;
     text-align: center;
-    margin-bottom: 1.5rem;
+
   }
 
   .successDonation {
     display: flex;
     flex-direction: column;
     align-items: center;    
-    justify-content: center;  
+    justify-content: center; 
+    background-color: #bbcdda; 
+    height: 100vh;
   }
 
   .krabsImage {
-    height: 50rem;
-    width: 25rem;
-    padding-bottom: 25rem;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
   }
 
   .cancelTitle {
@@ -586,6 +613,11 @@ code {
     margin-top: 4rem;
   }
 
+  @media screen and (max-height: 550px) {
+    .cancelDonation {
+      margin-top: 2rem;
+    }
+
 
   .will {
     height: 100%;
@@ -594,9 +626,10 @@ code {
     padding-bottom: 20rem;
   }
 
-  @media screen and (max-width: 768px) {
-    .cancelDonation {
-      margin-top: 2rem;
+  @media screen and (max-with: 800px) {
+    .krabsImage {
+      padding: 1rem;
+    }
     }
 
     .will {
@@ -1120,6 +1153,30 @@ code {
   word-break: break-word;
 }
 
+@media screen and (max-width:600px) {
+  .exercise-card {
+    width: 100%;
+  }  
+
+}
+
+@media screen and (max-width:300px) {
+  .exerciseHeader {
+    font-size: 3rem;
+  }
+
+  .exerciseContainer {
+    transform: scale(0.9);
+  }
+
+  .exercise-card {
+    width: 100%;
+  }
+
+}
+
 .userName {
   color: turquoise;
+  font-weight: bold;
+  text-shadow: none;
 }
