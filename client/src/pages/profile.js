@@ -10,15 +10,15 @@ import backProfile from "../images/backProfile.png";
 
 import { Link } from "react-router-dom";
 
-// import { GET_ME } from '../utils/queries'
-// import { useQuery } from "@apollo/client";
+import { GET_ME } from '../utils/queries'
+import { useQuery } from "@apollo/client";
 
 
 
 
 const Profile = () => {
-    // const { data, loading, error } = useQuery(GET_ME);
-    // const username = data?.me?.username;
+    const { data, loading, error } = useQuery(GET_ME);
+    const username = data?.me?.username;
 
     if (!Auth.loggedIn()) {
         return <Link to="/login" />;
@@ -28,8 +28,7 @@ const Profile = () => {
         <div className="myFithub" style={{ backgroundImage: `url(${backProfile})` }}>
             <Container className="fitContainer" >
                 <h1 className="fitTitle">My FitHub</h1>
-                {/* Add {username} */}
-                <p className="fitText"> Welcome to your FitHub! Let's put in that work and celebrate with a 🍩
+                <p className="fitText"> Welcome to your FitHub <span className="userName"> {username} </span>! Let's put in that work and celebrate with a 🍩
                 </p>
                 <div className="cardContainer">
                     <div className="card">
