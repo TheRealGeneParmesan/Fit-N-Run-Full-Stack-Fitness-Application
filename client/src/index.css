@@ -581,13 +581,42 @@ code {
     flex-direction: column;
     align-items: center;    
     justify-content: center;
+    background-color: #bbcdda;
+    height: 100vh;
+    margin-top: 4rem;
   }
 
+
   .will {
-    height: 45rem;
-    width: 25rem;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
     padding-bottom: 20rem;
   }
+
+  @media screen and (max-width: 768px) {
+    .cancelDonation {
+      margin-top: 2rem;
+    }
+
+    .will {
+      max-width: 80%;
+      height: 80%;
+      padding-bottom: 2rem;
+    }
+    
+  }
+
+  @media screen and (max-width: 280px) {
+   
+    .will {
+      max-width: 80%;
+      height: 80%;
+      padding-bottom: 2rem;
+    }
+    
+  }
+
 
   @media (max-width: 768px) {
     .donateContainer {
