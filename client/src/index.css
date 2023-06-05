@@ -1099,3 +1099,7 @@ code {
 
   word-break: break-word;
 }
+
+.userName {
+  color: turquoise;
+}
