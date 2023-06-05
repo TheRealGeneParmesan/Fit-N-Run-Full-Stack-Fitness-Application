@@ -36,7 +36,7 @@ const Profile = () => {
         <div className="myFithub" style={{ backgroundImage: `url(${backProfile})` }}>
             <Container className="fitContainer" >
                 <h1 className="fitTitle">My FitHub</h1>
-                <p className="fitText"> Welcome to your FitHub <span className="userName"> {username} </span>! Let's put in that work and celebrate with a 🍩
+                <p className="fitText"> Welcome to your FitHub, <span className="userName"> {username} </span>! Let's put in that work and celebrate with a 🍩
                 </p>
                 <div className="cardContainer">
                     <div className="card">
@@ -49,7 +49,7 @@ const Profile = () => {
                         <Link className="nutrition-link" to="/exercises"> Exercises &nbsp;&nbsp; <FaWeightHanging /></Link>
                     </div>
                     <div className="card">
-                        <Link className="stopwatch-link" to="/stopwatch"> Stopwatch &nbsp;&nbsp; < ImStopwatch /></Link>
+                        <Link className="stopwatch-link" to="/stopwatch"> Stopwatch <ImStopwatch /></Link>
                     </div>
                 </div>
             </Container>
