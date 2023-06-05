@@ -14,7 +14,6 @@ const Login = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(email, password);
     try {
       const { data } = await login({
         variables: { email, password },
@@ -22,7 +21,6 @@ const Login = () => {
 
       Auth.login(data.login.token);
     } catch (e) {
-      console.log(e);
     }
 
     // clear form values

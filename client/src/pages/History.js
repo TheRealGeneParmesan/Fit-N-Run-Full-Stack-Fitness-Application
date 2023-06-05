@@ -30,7 +30,6 @@ const History = () => {
   }, [data]);
 
   const handleRemoveCardio = async (cardioId) => {
-    console.log(cardioId);
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -56,7 +55,6 @@ const History = () => {
   };
 
   const handleRemoveStrength = async (strengthId) => {
-    console.log(strengthId)
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {

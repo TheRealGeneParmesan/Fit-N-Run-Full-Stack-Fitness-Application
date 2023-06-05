@@ -6,12 +6,9 @@ const DONATE = gql`
     }
 `
 const DonateButton = () => {
-    // lazy query doesn't run right away
     const [startDonation, { loading, error, data }] = useLazyQuery(DONATE, {
         onCompleted: (queryData) => {
-            console.log(queryData);
             let data = JSON.parse(queryData.donationSession);
-            console.log(data);
             let donateUrl = data.url;
             window.location.assign(donateUrl);
         }
@@ -19,7 +16,6 @@ const DonateButton = () => {
 
     if (loading) return null;
     if (error) return `${error}`;
-    console.log(data);
 
     return (
         <div className="donateContainer" >

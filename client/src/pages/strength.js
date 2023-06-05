@@ -45,7 +45,6 @@ const Strength = () => {
                 }
             }
         });
-        console.log(data);
 
         setActivity('');
         setReps('');
