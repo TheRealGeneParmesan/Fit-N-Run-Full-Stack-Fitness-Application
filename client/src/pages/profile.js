@@ -3,8 +3,8 @@ import Auth from "../utils/auth";
 import { Container } from "react-bootstrap";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { GiRunningNinja } from "react-icons/gi";
-import { IoIosNutrition } from "react-icons/io";
 import { ImStopwatch } from "react-icons/im";
+import { FaWeightHanging } from "react-icons/fa";
 
 import backProfile from "../images/backProfile.png";
 
@@ -19,6 +19,14 @@ import { useQuery } from "@apollo/client";
 const Profile = () => {
     const { data, loading, error } = useQuery(GET_ME);
     const username = data?.me?.username;
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
     if (!Auth.loggedIn()) {
         return <Link to="/login" />;
@@ -38,7 +46,7 @@ const Profile = () => {
                         <Link className="cardio-link" to="/cardio"> Cardio &nbsp;&nbsp; <GiRunningNinja /></Link>
                     </div>
                     <div className="card">
-                        <Link className="nutrition-link" to="/exercises"> Exercises &nbsp;&nbsp; <IoIosNutrition /></Link>
+                        <Link className="nutrition-link" to="/exercises"> Exercises &nbsp;&nbsp; <FaWeightHanging /></Link>
                     </div>
                     <div className="card">
                         <Link className="stopwatch-link" to="/stopwatch"> Stopwatch &nbsp;&nbsp; < ImStopwatch /></Link>
