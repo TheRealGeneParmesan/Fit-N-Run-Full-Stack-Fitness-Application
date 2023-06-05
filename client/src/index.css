@@ -593,6 +593,23 @@ code {
     max-width: 600px;
   }
 
+  @media screen and (max-with: 800px) {
+    .krabsImage {
+      padding: 1rem;
+    }
+    }
+
+
+
+  .cancelDonation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    background-color: #bbcdda;
+    height: 100vh;
+  }
+
   .cancelTitle {
     font-family: 'Cherry Bomb One';
     color: #ecb2f3;
@@ -603,34 +620,22 @@ code {
     text-align: center;
   }
 
-  .cancelDonation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    justify-content: center;
-    background-color: #bbcdda;
-    height: 100vh;
-    margin-top: 4rem;
-  }
-
-  @media screen and (max-height: 550px) {
+  @media screen and (max-width: 550px) {
     .cancelDonation {
-      margin-top: 2rem;
+      margin-top: 1rem;
+    }
+
+    .cancelTitle {
+      font-size: 2.5rem;
     }
 
 
   .will {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
     max-width: 600px;
-    padding-bottom: 20rem;
   }
 
-  @media screen and (max-with: 800px) {
-    .krabsImage {
-      padding: 1rem;
-    }
-    }
 
     .will {
       max-width: 80%;
@@ -640,7 +645,11 @@ code {
     
   }
 
-  @media screen and (max-width: 280px) {
+  @media screen and (max-width: 400px) {
+
+    .cancelTitle {
+      font-size: 2rem;
+    }
    
     .will {
       max-width: 80%;
@@ -649,6 +658,13 @@ code {
     }
     
   }
+
+
+
+
+
+
+
 
 
   @media (max-width: 768px) {
