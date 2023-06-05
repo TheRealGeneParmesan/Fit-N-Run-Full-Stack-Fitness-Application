@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { GET_EXERCISES } from '../utils/queries';
 import weights from '../images/weights.jpg';
@@ -37,7 +37,7 @@ const ExerciseList = () => {
                     <div>
                         <input className="exercise-input"
                             type="text"
-                            placeholder="Enter a muscle group"
+                            placeholder="Enter a Muscle Group"
                             value={muscle}
                             onChange={handleInputChange}
                         />
