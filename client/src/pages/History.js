@@ -30,7 +30,6 @@ const History = () => {
   }, [data]);
 
   const handleRemoveCardio = async (cardioId) => {
-    console.log(cardioId);
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -56,7 +55,6 @@ const History = () => {
   };
 
   const handleRemoveStrength = async (strengthId) => {
-    console.log(strengthId)
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -112,7 +110,7 @@ const History = () => {
   return (
     <main className="historyPage" style={{ backgroundImage: `url(${backHistory})` }}>
       <div className="col-12 col-lg-10">
-        <div className="historyContainer card">
+        <div className="historyContainer">
           <h4 className="historyHeader">Workout History</h4>
           <div className="workoutHistory card-body">
             <div className="cardioHistory">

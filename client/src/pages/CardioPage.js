@@ -40,7 +40,6 @@ const Cardio = () => {
                 }
             }
         });
-        console.log(data);
 
         setCardio('');
         setCardioDuration('');

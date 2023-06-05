@@ -6,16 +6,17 @@ import loadingImage from '../images/loading.gif';
 
 const ExerciseList = () => {
     const [muscle, setMuscle] = useState('');
-    const [searchExercises, { loading, error, data }] = useLazyQuery(GET_EXERCISES, {
-        variables: { muscle },
-    });
+    const [searchExercises, { loading, error, data }] = useLazyQuery(GET_EXERCISES);
 
     const handleInputChange = (e) => {
         setMuscle(e.target.value);
     };
 
+
     const handleSearch = () => {
-        searchExercises();
+        searchExercises({
+            variables: { muscle },
+        });
     };
 
     if (loading) {
@@ -36,7 +37,7 @@ const ExerciseList = () => {
                     <div>
                         <input className="exercise-input"
                             type="text"
-                            placeholder="Enter a muscle group"
+                            placeholder="Enter a Muscle Group"
                             value={muscle}
                             onChange={handleInputChange}
                         />

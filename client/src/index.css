@@ -258,15 +258,6 @@ code {
   background-position: center;
 }
 
-.historyContainer {
-  margin: auto;
-  width: 80%;
-  margin-bottom: 15rem;
-  background-color:rgba(0, 0, 0, 0.4);
-  color: turquoise;
-  text-shadow: black 1px 0 10px;
-  font-family: 'Oswald';
-}
 
 .historyHeader {
   font-size: 3rem;
@@ -1098,4 +1089,8 @@ code {
   font-size: 1.3rem;
 
   word-break: break-word;
+}
+
+.userName {
+  color: turquoise;
 }
