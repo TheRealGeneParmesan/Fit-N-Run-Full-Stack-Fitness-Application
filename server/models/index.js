@@ -1,5 +1,5 @@
 const User = require("./User");
-const Cardio = require("./Cardio");
-const Strength = require("./Strength");
+const Cardio = require("./cardio")
+const Strength = require("./strength")
 
 module.exports = { User, Cardio, Strength };
