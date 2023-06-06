@@ -1191,7 +1191,7 @@ code {
 
 }
 
-@media screen and (max-width:250px) {
+@media screen and (max-width:260px) {
   .exercise-btn {
     margin-top: .5rem;
   }
