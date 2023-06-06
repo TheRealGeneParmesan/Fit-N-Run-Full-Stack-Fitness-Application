@@ -1176,9 +1176,10 @@ code {
 
 }
 
-@media screen and (max-width:300px) {
+@media screen and (max-width:350px) {
   .exerciseHeader {
     font-size: 3rem;
+    margin-top: 1.5rem;
   }
 
   .exerciseContainer {
@@ -1189,26 +1190,22 @@ code {
     width: 100%;
   }
 
-}
-
-@media screen and (max-width:260px) {
   .exercise-btn {
-    margin-top: .5rem;
+    margin-top: 1rem;
   }
 
+}
+
+@media screen and (max-width:250px) {
   .exerciseHeader {
-    font-size: 2.5rem;
-    margin-top: 1rem;
-  
+    font-size: 2rem;
+    margin-top: 1.5rem;
   }
 
   .exercise-input {
     font-size: 1.5rem;
   }
 
-  .exercise-btn {
-    font-size: 1.5rem;
-  }
 }
 
 .userName {
