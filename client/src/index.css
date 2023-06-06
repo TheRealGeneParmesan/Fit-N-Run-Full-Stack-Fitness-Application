@@ -1191,14 +1191,23 @@ code {
 
 }
 
-@media screen and (max-width:350px) {
+@media screen and (max-width:250px) {
   .exercise-btn {
     margin-top: .5rem;
   }
 
   .exerciseHeader {
+    font-size: 2.5rem;
     margin-top: 1rem;
   
+  }
+
+  .exercise-input {
+    font-size: 1.5rem;
+  }
+
+  .exercise-btn {
+    font-size: 1.5rem;
   }
 }
 
