@@ -1176,7 +1176,7 @@ code {
 
 }
 
-@media screen and (max-width:350px) {
+@media screen and (max-width:390px) {
   .exerciseHeader {
     font-size: 3rem;
     margin-top: 1.5rem;
