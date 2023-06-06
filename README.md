@@ -6,7 +6,22 @@ Fit N Run is a fitness application that allows users to manually log workouts an
 
 ## Installation
 
-N/A
+This app uses: 
+
+- MongoDB
+- GrqphQL
+- React
+- Express
+- Apollo Client
+- Apollo Server
+- API Ninja (API Exercises)
+- Stripe API
+- Request
+- Axios
+- JWT
+- Bootstrap 
+- Google Fonts
+- React-Icons 
 
 ## Usage
 
@@ -40,7 +55,7 @@ Shavana Puchta
 
 ## Resources
 
-Nutrition IX API:
+API Ninjas "Exercises API": https://api-ninjas.com/api/exercises
 
 Stripe API: https://stripe.com/docs/api
 
