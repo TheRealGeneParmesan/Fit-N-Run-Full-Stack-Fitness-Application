@@ -1072,7 +1072,7 @@ code {
   border-style: none;
   border-radius: 10px;
   font-size: 1.8rem;
-  margin-left: .1rem;
+  margin-left: .3rem;
   font-family: 'Oswald';
 }
 
@@ -1189,6 +1189,17 @@ code {
     width: 100%;
   }
 
+}
+
+@media screen and (max-width:350px) {
+  .exercise-btn {
+    margin-top: .5rem;
+  }
+
+  .exerciseHeader {
+    margin-top: 1rem;
+  
+  }
 }
 
 .userName {
