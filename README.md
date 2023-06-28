@@ -2,7 +2,7 @@
 
 ## Description
 
-Fit N Run is a fitness application designed to help you maintain your fitness goals. You can log your workouts directly within the app and view your past activities to ensure you’re staying on track. You can also time your workouts from directly within the app! If you do not know where to begin, you can also search a specific muscle group for some exercises to help you get started.
+Fit N Run is a full stack fitness application designed to help you maintain your fitness goals. You can log your workouts directly within the app and view your past activities to ensure you’re staying on track. You can also time your workouts from directly within the app! If you do not know where to begin, you can also search a specific muscle group for some exercises to help you get started.
 
 ## Installation
 
